@@ -1,0 +1,262 @@
+.points_table thead {
+	width: 100%; border:1px solid #ccc;
+}
+
+.points_table tbody {
+	height:auto;
+	overflow-y: auto;
+	width: 100%;border:1px solid #ccc;
+}
+
+.points_table thead tr{
+	border:0px solid #ccc;
+}
+
+ .points_table tr{	border:1px solid #ccc;
+ 	
+ }
+ .points_table tr td, .points_table tr th{width:25%; border:1px solid #ccc;}
+.points_table thead, .points_table tbody, .points_table tr, .points_table td, .points_table th{
+
+}
+
+.points_table thead{
+	background: #1976d2;
+	color: #fff;
+}
+
+.points_table tbody td, .points_table thead > tr> th{
+	float: left;
+	border-bottom-width: 0;
+}
+
+.points_table>tbody>tr>td, .points_table>tbody>tr>th, .points_table>tfoot>tr>td, .points_table>tfoot>tr>th, .points_table>thead>tr>td, .points_table>thead>tr>th{
+	padding: 8px;
+	height: 50px;
+	text-align: center;
+	line-height: 32px;
+}
+
+.odd {
+	background: #ffffff;
+	color: #000;
+}
+
+.even {
+	background: #efefef;
+	color: #000;
+}
+
+.points_table_scrollbar{
+	height: 612px;
+	overflow-y: scroll;
+}
+
+.points_table_scrollbar::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+	border-radius: 10px;
+	background-color: #444444;
+}
+
+.points_table_scrollbar::-webkit-scrollbar{
+	width: 1%;
+	min-width: 5px;
+	background-color: #F5F5F5;
+}
+
+.points_table_scrollbar::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background-color: #1976d2;
+	background-image: -webkit-linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 50%, transparent, transparent)
+}
+
+.drivcom .form-group{margin-bottom:0;}
+.btn {
+    padding: 0px 10px;
+    cursor: pointer;
+}
+.form-control{    min-height: 25px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 12px;}
+	select#inlineFormCustomSelect {
+    max-height: 25px;
+    padding: 0 10px;
+    font-size: 12px;
+}
+.input-group-text{padding-top:0; padding-bottom:0;}
+.newtab th{    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    background: #1976d2;
+    color: #fff;}
+	
+	.newtab td{    font-size: 12px;  text-align: center;}
+	.newtab tr td:First-child, .newtab tr th:First-child {
+    font-size: 20px!important;
+    padding: 5px;
+}
+
+
+
+
+.custab{
+    border: 1px solid #ccc;
+    padding:0px;
+    margin: 0% 0 2%;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s; background:#fff;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+	
+	
+@media screen and (min-width:1200px) {
+	
+	.w200{max-width:180px;}
+	.card label {
+    font-size: 12px;
+    margin-bottom: 2px;}
+	.mb-2, .my-2{margin-bottom:0.2rem !important;}
+	
+}
+	
+	@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+main {
+  min-width: 320px;
+  max-width: 100%;
+  padding:50px 10px 10px;
+  margin:0 auto 30px;
+  background: #fff;
+}
+
+section {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+}
+
+.newtab input {
+  display: none;
+}
+
+.newtab label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 5px 15px;
+  font-weight: 600;
+  text-align: center;
+  color: #bbb; font-size:13px;
+  border: 1px solid transparent;
+}
+
+.newtab label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+/* label[for*='1']:before { content: '\f1cb'; } */
+/* label[for*='2']:before { content: '\f17d'; } */
+/* label[for*='3']:before { content: '\f16b'; } */
+/* label[for*='4']:before { content: '\f1a9'; } */
+
+.newtab label:hover {
+  color: #888;
+  cursor: pointer;
+}
+.table thead th, .table th{border:1px solid #000;}
+
+.newtab  input:checked + label {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid orange;
+  border-bottom: 1px solid #fff;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5,
+#tab6:checked ~ #content6,
+#tab7:checked ~ #content7,
+#tab8:checked ~ #content8,
+#tab9:checked ~ #content9,
+#tab10:checked ~ #content10,
+#tab11:checked ~ #content11 {
+  display: block;
+}
+.table td, .table th {
+    border-color: #000;
+}
+
+.fl button#submit {
+    margin-right: 10px;
+}
+.form-group {
+    margin-bottom: 5px;
+}
+#content1 input,#content1 select{display: block;min-height: 25px; height:auto;}
+#content1 label{padding:5px 15px 5px 0;}
+#content1 .col-md-4{float:left;}
+
+
+.w100{width:100%;}
+.mt-35{margin-top:35px;}
+.newpad{padding:15px;}
+#content2 h4 span {
+    background: #000;
+    padding: 5px;
+    color: #fff;
+    border-radius: 5px;
+    min-width: 100px;
+    display: inline-block;
+    text-align: center;
+}
+.dropboxn {
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.dropboxn h4 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+}
+.dropboxn p {
+    font-size: 16px;
+    color: #333;
+    margin-top: 20px;
+    border-top: 1px solid;
+    padding-top: 20px;
+}
+.newpad section{border: 1px solid #ddd!important;
+    padding: 15px!important;}
+
+@media screen and (max-width: 1000px) {
+.custyle section,.toptab {overflow: auto;}
+table.table.table-striped.custab,.toptab table {width: 1000px;}
+.toptab {width: 90%; margin: 0 5%; padding: 0;}
+}
+
+@media screen and (max-width: 650px) {
+.topbar .top-navbar .navbar-header {width: 300px;}
+img.light-logo {max-width: 100%;}
+.newtab   label { }
+ .newtab  label:before {margin: 0; font-size: 18px;}
+  .newtab input:checked + label{border-bottom:1px solid #000;}
+}
+
+@media screen and (max-width: 400px) {
+ .newtab  label {
+    padding:3px;
+  }
+}

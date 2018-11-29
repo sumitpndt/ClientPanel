@@ -1,0 +1,653 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <!--<h4 class="card-title">Booking For </h4>-->
+
+                <form class="form drivcom">
+				<div class="row">
+
+					<div class="col-md-6">
+
+							    Booking For
+								<input type="radio"  /> Today 
+								<input type="radio"  /> This Week
+					</div>	
+					<div class="col-md-6" style="text-align: right;" >
+							<input type="checkbox" (click)="showfilter($event)" /> Show Filter
+					</div>
+		     	</div>
+				<div class="row">
+				<div class="col-md-2 w200">
+					<div class="form-group">
+						<label>From</label>
+						<div class="input-group">
+							<input class="form-control" placeholder="yyyy-mm-dd"
+							name="d1" #c1="ngModel" [(ngModel)]="model1" ngbDatepicker #d1="ngbDatepicker" >
+							<div class="input-group-append">
+								<button class="btn btn-outline-secondary" (click)="d1.toggle()" type="button">
+									<i class="ti-calendar"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+							
+				<div class="col-md-2 w200">
+					<div class="form-group">
+						<label>To </label>
+						<div class="input-group">
+							<input class="form-control" placeholder="yyyy-mm-dd"
+							name="d2" #c2="ngModel" [(ngModel)]="model2" ngbDatepicker #d2="ngbDatepicker" >
+							<div class="input-group-append">
+								<button class="btn btn-outline-secondary" (click)="d2.toggle()" type="button">
+									<i class="ti-calendar"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-2 w200">
+						<div class="form-group">
+							<label>Confirmed</label>
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+								</div>
+								<select class="custom-select col-12" id="inlineFormCustomSelect">
+										<option selected>Choose...</option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-2 w200">
+						<div class="form-group">
+							<label>Pay</label>
+							<div class="input-group mb-2">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+								</div>
+								<select class="custom-select col-12" id="inlineFormCustomSelect">
+										<option selected>Choose...</option>
+										<option value="1">One</option>
+										<option value="2">Two</option>
+										<option value="3">Three</option>
+								</select>
+							</div>
+						</div>
+					</div>
+	
+					
+	
+	
+	
+
+
+				<div class="col-md-2 w200">
+                    <div class="form-group">
+                        <label>Company</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+                            </div>
+                            <select class="custom-select col-12" id="inlineFormCustomSelect">
+									<option selected>Choose...</option>
+									<option value="1">One</option>
+									<option value="2">Two</option>
+									<option value="3">Three</option>
+							</select>
+                        </div>
+                    </div>
+				</div>
+				
+
+				<div class="col-md-2 w200">
+					<div class="form-group">
+						<label>Invoiced</label>
+						<div class="input-group mb-2">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+							</div>
+							<select class="custom-select col-12" id="inlineFormCustomSelect">
+									<option selected>Choose...</option>
+									<option value="1">One</option>
+									<option value="2">Two</option>
+									<option value="3">Three</option>
+							</select>
+						</div>
+					</div>
+				</div>
+					
+
+				<div class="col-md-2 w200">
+					<div class="form-group">
+						<label>Payslip</label>
+						<div class="input-group mb-2">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+							</div>
+							<select class="custom-select col-12" id="inlineFormCustomSelect">
+									<option selected>Choose...</option>
+									<option value="1">One</option>
+									<option value="2">Two</option>
+									<option value="3">Three</option>
+							</select>
+						</div>
+					</div>
+				</div>
+
+					<div class="col-md-2">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon22"><i class="ti-email"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon22">
+                        </div>
+                    </div>
+                    </div>
+					
+                    
+					
+					</div>
+
+					<div class="row" *ngIf="show" >
+
+							<div class="col-md-2">
+								<div class="form-group">
+									<label>Reference</label>
+									<div class="input-group mb-2">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="basic-addon4"><i class="ti-lock"></i></span>
+										</div>
+										<input type="text" class="form-control" placeholder="Reference" aria-label="Password" aria-describedby="basic-addon4">
+									</div>
+								</div>
+							</div>
+
+							
+							<div class="col-md-2 w200">
+									<div class="form-group">
+										<label>Passenger  Name</label>
+										<div class="input-group mb-2">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+											</div>
+											<select class="custom-select col-12" id="inlineFormCustomSelect">
+													<option selected>Choose...</option>
+													<option value="1">One</option>
+													<option value="2">Two</option>
+													<option value="3">Three</option>
+											</select>
+										</div>
+									</div>
+							</div>
+
+							<div class="col-md-2 w200">
+									<div class="form-group">
+										<label>Account  Name</label>
+										<div class="input-group mb-2">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+											</div>
+											<select class="custom-select col-12" id="inlineFormCustomSelect">
+													<option selected>Choose...</option>
+													<option value="1">One</option>
+													<option value="2">Two</option>
+													<option value="3">Three</option>
+											</select>
+										</div>
+									</div>
+							</div>
+							
+							<div class="col-md-2 w200">
+								<div class="form-group">
+									<label>Source Partner  Name</label>
+									<div class="input-group mb-2">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+										</div>
+										<select class="custom-select col-12" id="inlineFormCustomSelect">
+												<option selected>Choose...</option>
+												<option value="1">One</option>
+												<option value="2">Two</option>
+												<option value="3">Three</option>
+										</select>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-2">
+									<div class="form-group">
+										<label>Reference Email</label>
+										<div class="input-group mb-2">
+											<div class="input-group-prepend">
+												<span class="input-group-text" id="basic-addon4"><i class="ti-lock"></i></span>
+											</div>
+											<input type="text" class="form-control" placeholder="Reference Email" aria-label="Password" aria-describedby="basic-addon4">
+										</div>
+									</div>
+								</div>
+						
+
+								<div class="col-md-2">
+										<div class="form-group">
+											<label>Customer Reference</label>
+											<div class="input-group mb-2">
+												<div class="input-group-prepend">
+													<span class="input-group-text" id="basic-addon4"><i class="ti-lock"></i></span>
+												</div>
+												<input type="text" class="form-control" placeholder="Customer Reference" aria-label="Password" aria-describedby="basic-addon4">
+											</div>
+										</div>
+									</div>
+
+									<div class="col-md-2">
+											<div class="form-group">
+												<label>Cost Center</label>
+												<div class="input-group mb-2">
+													<div class="input-group-prepend">
+														<span class="input-group-text" id="basic-addon4"><i class="ti-lock"></i></span>
+													</div>
+													<input type="text" class="form-control" placeholder="Cost Center" aria-label="Password" aria-describedby="basic-addon4">
+												</div>
+											</div>
+										</div>
+							
+					<div class="col-md-2">
+							<div class="form-group">
+								<label>From</label>
+								<div class="input-group">
+									<input class="form-control" placeholder="yyyy-mm-dd"
+									name="d3" #c3="ngModel" [(ngModel)]="model3" ngbDatepicker #d3="ngbDatepicker" >
+									<div class="input-group-append">
+										<button class="btn btn-outline-secondary" (click)="d3.toggle()" type="button">
+											<i class="ti-calendar"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+								
+						<div class="col-md-2">
+							<div class="form-group">
+								<label>To </label>
+								<div class="input-group">
+									<input class="form-control" placeholder="yyyy-mm-dd"
+									name="d4" #c4="ngModel" [(ngModel)]="model4" ngbDatepicker #d4="ngbDatepicker" >
+									<div class="input-group-append">
+										<button class="btn btn-outline-secondary" (click)="d4.toggle()" type="button">
+											<i class="ti-calendar"></i>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-2 w200">
+							<div class="form-group">
+								<label>By</label>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+									</div>
+									<select class="custom-select col-12" id="inlineFormCustomSelect">
+											<option selected>Choose...</option>
+											<option value="1">One</option>
+											<option value="2">Two</option>
+											<option value="3">Three</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-2 w200">
+							<div class="form-group">
+								<label>Web Booking</label>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+									</div>
+									<select class="custom-select col-12" id="inlineFormCustomSelect">
+											<option selected>Choose...</option>
+											<option value="1">One</option>
+											<option value="2">Two</option>
+											<option value="3">Three</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-2 w200">
+							<div class="form-group">
+								<label>Booking Class</label>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+									</div>
+									<select class="custom-select col-12" id="inlineFormCustomSelect">
+											<option selected>Choose...</option>
+											<option value="1">One</option>
+											<option value="2">Two</option>
+											<option value="3">Three</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2 w200">
+							<div class="form-group">
+								<label>Vehicle</label>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+									</div>
+									<select class="custom-select col-12" id="inlineFormCustomSelect">
+											<option selected>Choose...</option>
+											<option value="1">One</option>
+											<option value="2">Two</option>
+											<option value="3">Three</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2 w200">
+							<div class="form-group">
+								<label>Event</label>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+									</div>
+									<select class="custom-select col-12" id="inlineFormCustomSelect">
+											<option selected>Choose...</option>
+											<option value="1">One</option>
+											<option value="2">Two</option>
+											<option value="3">Three</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-2 w200">
+							<div class="form-group">
+								<label>Payment</label>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+									</div>
+									<select class="custom-select col-12" id="inlineFormCustomSelect">
+											<option selected>Choose...</option>
+											<option value="1">One</option>
+											<option value="2">Two</option>
+											<option value="3">Three</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2 w200">
+							<div class="form-group">
+								<label>Driver</label>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+									</div>
+									<select class="custom-select col-12" id="inlineFormCustomSelect">
+											<option selected>Choose...</option>
+											<option value="1">One</option>
+											<option value="2">Two</option>
+											<option value="3">Three</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-2 w200">
+							<div class="form-group">
+								<label>To Driver</label>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+									</div>
+									<select class="custom-select col-12" id="inlineFormCustomSelect">
+											<option selected>Choose...</option>
+											<option value="1">One</option>
+											<option value="2">Two</option>
+											<option value="3">Three</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-2 w200">
+							<div class="form-group">
+								<label>Partner</label>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+									</div>
+									<select class="custom-select col-12" id="inlineFormCustomSelect">
+											<option selected>Choose...</option>
+											<option value="1">One</option>
+											<option value="2">Two</option>
+											<option value="3">Three</option>
+									</select>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div>
+
+					
+                    <!--<div class="form-group">
+                        <div class="custom-control custom-checkbox mr-sm-2">
+                            <input type="checkbox" class="custom-control-input" id="checkbox10" value="check">
+                            <label class="custom-control-label" for="checkbox10">Remember Me</label>
+                        </div>
+                    </div>-->
+					<br>
+                    <button type="submit" class="btn btn-success m-r-10">Add Booking</button>
+                    <button type="submit" class="btn btn-dark">Map</button>
+					
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+	<div class="row">
+		<div class="col-md-12 toptab">
+		
+		<div class="card">
+		<div class="card-body">
+		<table cellpadding="0" cellspacing="0" class="table-condensed chk-boxs">
+			<tr>
+				<td>
+					<div class="bg-green gbg-pad black pad-10">
+					
+					
+					<!-- <input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Pending" />  -->
+					<label class="newbox"><label for="Pending">Pending</label>
+					<input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Pending" />
+					<span class="checkmark"></span>
+					</label>
+					
+					
+					</div>
+				</td>
+				<td>&nbsp;&nbsp;</td>
+				<td>
+					<div class="bg-yellow gbg-pad black pad-10">
+					
+					
+					<!-- <input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Dispatched" />  -->
+					<label class="newbox"><label for="Dispatched">Dispatched</label>
+					<input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Dispatched" />
+					<span class="checkmark"></span>
+					</label>
+					
+					</div>
+				</td>
+				<td>&nbsp;&nbsp;</td>
+				<td>
+					<div class="bg-blue gbg-pad black pad-10">
+					
+					<!-- <input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Completed" />  -->
+					<label class="newbox"><label for="Completed">Completed</label>
+					<input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Completed"  />
+					<span class="checkmark"></span>
+					</label>
+					
+					
+					</div>
+				</td>
+				<td>&nbsp;&nbsp;</td>
+				<td>
+					<div class="bg-red gbg-pad black pad-10">
+					
+					<!-- <input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Canceled" />  -->
+					<label class="newbox"><label for="Canceled">Canceled</label>
+					<input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Canceled"  />
+					<span class="checkmark"></span>
+					</label>
+					
+					</div>
+				</td>
+				<td>&nbsp;&nbsp;</td>
+				<td>
+					<div class="bg-purple gbg-pad black pad-10">
+					<!-- <input type="checkbox" id="Invoice" name="fancy-checkbox-primary" value="Invoice"> -->
+					<label class="newbox"><label for="Invoice">Invoice</label>
+					<input type="checkbox" id="Invoice" name="fancy-checkbox-primary" value="Invoice"  />
+					<span class="checkmark"></span>
+					</label>
+					
+					</div>
+				</td>
+				<td>&nbsp;&nbsp;</td>
+				<td>
+					<div class="bg-skyblue gbg-pad black pad-10">
+					
+					<!-- <input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Quotation" />  -->
+					<label class="newbox"><label for="Quotation">Quotation</label>
+					<input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Quotation" />
+					<span class="checkmark"></span>
+					</label>
+					
+					</div>
+				</td>
+				<td>&nbsp;&nbsp;</td>
+				<td>
+					<div class="bg-brown gbg-pad black pad-10">
+					
+					<!-- <input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="No_Show" />  -->
+					<label class="newbox"><label for="No_Show">No Show</label>
+					<input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="No_Show" />
+					<span class="checkmark"></span>
+					</label>
+					
+					</div>
+				</td>
+				<td>&nbsp;&nbsp;</td>
+				<td>
+					<button type="submit" class="btn btn-dark">All</button>
+				</td>
+			</tr>
+		</table>
+		<br>
+		
+		<table cellpadding="0" cellspacing="0" class="table-condensed">
+			<tr>
+				<td><i class="mdi mdi-flag-variant black" data-name="mdi-flag-variant"></i> Dispatched</td>
+				<td>&nbsp;&nbsp;</td>
+				<td><i class="mdi mdi-flag-variant green" data-name="mdi-flag-variant"></i> Accepted</td>
+				<td>&nbsp;&nbsp;</td>
+				<td><i class="mdi mdi-flag-variant yellow " data-name="mdi-flag-variant"></i> All pickup</td>
+				<td>&nbsp;&nbsp;</td>
+				<td><i class="mdi mdi-flag-variant orange" data-name="mdi-flag-variant"></i> Passenger on board</td>
+				<td>&nbsp;&nbsp;</td>
+				<td><i class="mdi mdi-flag-variant red" data-name="mdi-flag-variant"></i> Soon to clear</td>
+				<td>&nbsp;&nbsp;</td>
+				<td><i class="mdi mdi-flag-variant blue" data-name="mdi-flag-variant"></i> Clear</td>
+			</tr>
+		</table>
+		</div>
+		</div>
+		<table class="newtab " border="1" width="100%" border-color="#ccc">
+			<thead>
+				<tr>
+				<th ><i class="mdi mdi-flag-variant" data-name="mdi-flag-variant"></i></th>
+					<th >Date / Time</th>
+					<th >Passenger Name</th>
+					<th >Ref.</th>
+					<th >Booking Class</th>
+					<th >Account / Partner	</th>
+					<th width="30%">Itinerary</th>
+					<th >Driver / Vehicle</th>
+					<th >Payment</th>
+					<th >Company</th>
+
+				</tr>
+			</thead>
+
+			<tbody class="">
+				<tr class="odd">
+				<td class=""><i class="mdi mdi-flag-variant red" data-name="mdi-flag-variant"></i></td>
+					<td class=""><a [routerLink] = "['detail']" >Wed, 23 Nov 2016, 10:00</a></td>
+					<td class="">Eric Picks</td>
+					<td class="">000147</td>
+					<td class="">Car</td>
+					<td class="">Deutsche Bank (006)</td>
+					<td class="">Pinners hall, London. EC2N 1EN to 366 Great west poad, Hounshow, Tw5 0BD
+							Waiting and Return [ Waiting Time : 2hrs(s) ]</td>
+					<td class="">Mark Tail / Audi A5</td>
+					<td class="">£ 504.00
+							Account</td>
+					<td class="">Vespa</td>	
+				</tr>
+
+				<tr class="odd">
+				<td class=""><i class="mdi mdi-flag-variant green" data-name="mdi-flag-variant"></i></td>
+						<td class=""><a [routerLink] = "['detail']" >Wed, 23 Nov 2016, 10:00</a></td>
+						<td class="">Eric Picks</td>
+						<td class="">000147</td>
+						<td class="">Car</td>
+						<td class="">Deutsche Bank (006)</td>
+						<td class="">Pinners hall, London. EC2N 1EN to 366 Great west poad, Hounshow, Tw5 0BD
+								Waiting and Return [ Waiting Time : 2hrs(s) ]</td>
+						<td class="">Mark Tail / Audi A5</td>
+						<td class="">£ 504.00
+								Account</td>
+						<td class="">Vespa</td>	
+					</tr>
+
+					<tr class="odd">
+					<td class=""><i class="mdi mdi-flag-variant blue" data-name="mdi-flag-variant"></i></td>
+							<td class=""><a [routerLink] = "['detail']" >Wed, 23 Nov 2016, 10:00</a></td>
+							<td class="">Eric Picks</td>
+							<td class="">000147</td>
+							<td class="">Car</td>
+							<td class="">Deutsche Bank (006)</td>
+							<td class="">Pinners hall, London. EC2N 1EN to 366 Great west poad, Hounshow, Tw5 0BD
+									Waiting and Return [ Waiting Time : 2hrs(s) ]</td>
+							<td class="">Mark Tail / Audi A5</td>
+							<td class="">£ 504.00
+									Account</td>
+							<td class="">Vespa</td>	
+						</tr>
+
+
+			</tbody>
+		</table>
+	</div>
+	</div>
+	<br>
+	<br>

@@ -1,0 +1,215 @@
+<div class="row">
+    <div class="col-lg-12">
+        
+			<div class="row">
+				<div class="col-md-6">
+					<a [routerLink] = "['add']" class="btn btn-success m-r-10">Add Drivers</a>
+                    <button class="btn btn-dark  m-r-10">Delete Drivers</button>
+					 <button class="btn btn-info">Help</button>
+				</div>
+			</div>
+		
+	</div>
+</div>
+<br>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <form class="form drivcom">
+				
+                    <div class="row">
+				<div class="col-md-2 w200">
+					<div class="form-group">
+						<label>Driver No.</label>
+						<div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon22"><i class="ti-email"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+					</div>
+				</div>
+							
+				<div class="col-md-2 w200">
+					<div class="form-group">
+						<label>Call Sign</label>
+						<div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon22"><i class="ti-email"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="">
+                        </div>
+					</div>
+				</div>
+
+				<div class="col-md-2 w200">
+						<div class="form-group">
+							<label>Forename</label>
+							<div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon22"><i class="ti-email"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="">
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-2 w200">
+						<div class="form-group">
+							<label>Surname</label>
+							<div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon22"><i class="ti-email"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="">
+							</div>
+						</div>
+					</div>
+
+				<div class="col-md-2 w200">
+                    <div class="form-group">
+                        <label>Booking Class</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+                            </div>
+                            <select class="custom-select col-12" id="inlineFormCustomSelect">
+									<option selected>Choose...</option>
+									<option value="1">One</option>
+									<option value="2">Two</option>
+									<option value="3">Three</option>
+							</select>
+                        </div>
+                    </div>
+				</div>
+				<div class="col-md-2 w200">
+                    <div class="form-group">
+                        <label>&nbsp;</label>
+                        <div class="input-group mb-2">
+                            <button type="submit" class="btn btn-success m-r-10">Export</button>
+                        </div>
+                    </div>
+				</div>
+
+					
+                    
+					
+					</div>
+					
+					<div class="row">
+				<div class="col-md-2 w200">
+					<div class="form-group">
+						<label>Company</label>
+						<div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+                            </div>
+                            <select class="custom-select col-12" id="inlineFormCustomSelect">
+									<option selected>Choose...</option>
+									<option value="1">Company 1</option>
+									<option value="2">Company 2</option>
+									<option value="3">Company 3</option>
+							</select>
+                        </div>
+					</div>
+				</div>
+							
+				<div class="col-md-2 w200">
+					<div class="form-group">
+						<label>Shift</label>
+						<div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+                            </div>
+                            <select class="custom-select col-12" id="inlineFormCustomSelect">
+									<option selected>Choose...</option>
+									<option value="1">Day</option>
+									<option value="2">Night</option>
+							</select>
+                        </div>
+					</div>
+				</div>
+
+				<div class="col-md-2 w200">
+						<div class="form-group">
+						<label>Region</label>
+						<div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon11"><i class="ti-user"></i></span>
+                            </div>
+                            <select class="custom-select col-12" id="inlineFormCustomSelect">
+									<option selected>Choose...</option>
+									<option value="1">Local</option>
+									<option value="2">Outside</option>
+							</select>
+                        </div>
+					</div>
+					</div>
+					
+					</div>
+                    
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+	<div class="row">
+		<div class="col-md-12">
+		
+ 		<div class="table-responsive">
+		
+		<table class="newtab" border="1" width="100%" border-color="#ccc">
+			<thead>
+				<tr>
+					<th class="col-xs-1">S.N</th>
+					<th class="col-xs-1">Select</th>
+					<th class="col-xs-1">Image</th>
+					<th class="col-xs-5">Call Sign</th>
+					<th class="col-xs-1">Name & Address</th>
+					<th class="col-xs-1">Contact details</th>
+					<th class="col-xs-1">Vehicle</th>
+					<th class="col-xs-1">Delete</th>
+				</tr>
+			</thead>
+
+			<tbody class="points_table_scrollbar labdelete" *ngFor="let driver of driverList; let idx=index">
+				<tr class="odd">
+					<td class="col-xs-1">{{idx+1}}</td>
+					<td class="col-xs-1">
+						<label class="newbox">
+						<input type="checkbox" name="fancy-checkbox-primary" value="bookings_sent" id="bookings_sent1" />
+						<span class="checkmark"></span>						
+						</label>
+					</td>
+					<td class="col-xs-1"><img src="assets/images/driver_icon.png" width="50" alt="driver icon"/></td>
+					<td class="col-xs-5">{{driver.call_sign}}</td>
+					<td class="col-xs-1">{{driver.name}} <br> {{driver.address1}} {{driver.address2}} {{driver.address3}}</td>
+					<td class="col-xs-1">Mobile: {{driver.mobile}} <br> Email: {{driver.email}}</td>
+					<td class="col-xs-1">{{driver.vechile}} <br>{{driver.description}} <br>{{driver.registration_no}} <br> Booking Class: {{driver.booking_class}}</td>
+					<td style="font-size:1rem;" class="col-xs-1">
+					<!-- <a href="#"> -->
+						<i class="mdi mdi-delete black" style="cursor:pointer" data-name="mdi-flag-variant" (click)="DeleteCompanyById(driver.id)"></i>
+					<!-- </a> -->
+					
+					<!-- <a href="#"> -->
+						<i class="fa fa-edit black" style="margin-left:5px;" data-name="mdi-flag-variant" (click)="EditDriver(driver);"></i>
+					<!-- </a> -->
+				</td>
+				</tr>
+
+				
+				
+
+
+
+			</tbody>
+		</table>
+	</div>
+	</div>
+	</div>
+	<br><br>

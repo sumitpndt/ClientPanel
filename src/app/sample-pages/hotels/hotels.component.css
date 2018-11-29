@@ -1,0 +1,309 @@
+.custab{
+    border: 1px solid #ccc;
+    padding:0px;
+    margin: 0% 0 2%;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s; background:#fff;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+	
+	@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+main {
+  min-width: 320px;
+  max-width: 100%;
+  padding:50px 10px 10px;
+  margin:0 auto 30px;
+  background: #fff;
+}
+
+section,.hidediv {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+}
+#content5 input[type="radio"]{display:none;}
+
+.home-tab input {
+  display: none;
+}
+.contab input,.contab  select{display:block;    min-height: 25px; padding:0 5px;    height: auto;    font-size: 12px;}
+
+.home-tab label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding:0px;
+  font-weight: 400;
+  text-align: center;
+  color: #bbb; font-size:12px;
+  border: 1px solid transparent;
+}
+.btn{padding: 0px 10px;}
+.contab label{padding:0;    font-weight: normal; font-size: 14px;    color: #000;}
+.addressrw input{margin-bottom:10px;}
+.box1drive {padding: 10px;background: #f5f5f5; box-shadow: 4px 4px 4px rgba(0,0,0,0.2); margin-bottom:30px;}
+.bordersection{border: 1px solid #ddd!important; padding: 15px!important;}
+.home-tab label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+
+
+
+
+
+.newbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* Hide the browser's default checkbox */
+.newbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #1eafa9;
+}
+
+/* On mouse-over, add a grey background color */
+.newbox:hover input ~ .checkmark {
+    background-color: #1eafa9;
+}
+
+/* When the checkbox is checked, add a blue background */
+.newbox input:checked ~ .checkmark {
+    background-color: #000;
+}
+.newbox label {
+    margin-left: 30px!important;
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.newbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+
+
+.bookclases .table thead th,.bookclases  .table th {
+   border:1px solid #fff; color:#fff;
+      padding: 5px 0.75rem;
+    font-size: 12px;
+}
+
+.bookclases .table thead td,.bookclases  .table td {
+   border:1px solid #000; padding: 5px 0.75rem;
+    font-size: 12px;
+}
+
+
+.bookclases  .table-striped tbody tr:nth-of-type(odd){color:#000;}
+
+.bookclases .table thead th,#content8  .table th{
+   border:1px solid #fff; color:#fff;
+      padding: 5px 0.75rem;
+    font-size: 12px;
+}
+
+.bookclases .table thead td,#content8  .table td {
+   border:1px solid #000; padding: 5px 0.75rem;
+    font-size: 12px;
+}
+
+
+.bookclases .table-striped tbody tr:nth-of-type(odd){color:#000;}
+
+
+.headcov {
+    background: #333;
+    padding: 5px 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+/* Style the checkmark/indicator */
+.newbox .checkmark:after {
+    left: 8px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.pad-10{padding:5px 10px;}
+
+label.newbox{margin-left:0px!important;margin-right:0px!important;padding-left: 20px;}
+
+/* label[for*='1']:before { content: '\f1cb'; } */
+/* label[for*='2']:before { content: '\f17d'; } */
+/* label[for*='3']:before { content: '\f16b'; } */
+/* label[for*='4']:before { content: '\f1a9'; } */
+
+
+.mb-25{margin-bottom:10px;}
+.home-tab label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+.home-tab input:checked + label {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid orange;
+  border-bottom: 1px solid #fff;
+}
+
+.home-tab #content5 input:checked + label,.home-tab #content8 input:checked + label {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5,
+#tab6:checked ~ #content6,
+#tab7:checked ~ #content7,
+#tab8:checked ~ #content8,
+#tab9:checked ~ #content9,
+#tab10:checked ~ #content10,
+#tab11:checked ~ #content11,
+#tab12:checked ~ #content12,
+#tab13:checked ~ #content13,
+#tab14:checked ~ #content14,
+#tab15:checked ~ #content15,
+#tab16:checked ~ #content16,
+#tab19:checked ~ #content19,
+#tab18:checked ~ #content18{
+  display: block;
+}
+#content1,#content2,#content3,#content4,#content5,#content6,#content7,#content8,#content9,#content10,#content11,,#content12{padding: 0; border-top: 0px solid #ddd;}
+
+.leftrowdriv input,.leftrowdriv select{}
+
+#content5 label {
+    font-size: 14px;
+    padding: 5px;
+}
+.form-group {
+    margin-bottom: 15px; float:left;
+}
+
+/* pop up css start here */
+
+
+.fullrow  .newbox label{margin-left:0!important;    padding: 0 0 0 5px;}
+.checkmark{float:left; position:relative}
+.fullrow label{padding:0;}
+.mt-10{margin-top:10px!important;}
+
+
+
+/* css 24july */
+#content12 label,
+#content13 label,
+#content14 label,
+#content15 label,#content16 label{ float: left;width: auto; padding-top:0;padding-bottom:0;}
+
+#content12 input,
+#content15 input[type="text"] {float: left;width: 100px;    margin-right: 5px;}
+
+#content13 select,
+#content14 select,
+#content15 select,
+#content16 select{float: left;width:200px;    margin-right: 5px;}
+#content15 .newbox label {
+    margin-left: 0!important;
+    padding-top: 0!important;
+}
+
+#content5 .custab,#content8 .custab {
+    margin-bottom: 0;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #ffffff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-control {
+    color: #7d8b92;
+    min-height: 38px;
+    display: initial;
+}
+
+.form-control{
+    min-height: 25px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 12px;
+}
+
+
+
+
+
+
+input.sep1{
+    display: inline-block!important;
+    width: 100px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 10px;
+    padding: 0 5px;
+    background-color: #fff;margin-right:15px;
+}
+@media screen and (max-width: 650px) {
+.home-tab  label {
+    font-size: 0;
+  }
+ .home-tab label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+ .home-tab label {
+    padding: 15px;
+  }
+}

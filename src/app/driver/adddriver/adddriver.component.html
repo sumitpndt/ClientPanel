@@ -1,0 +1,2165 @@
+<div class="row">
+    <div class=" col-md-12 custyle">
+
+        <main class="home-tab">
+            <div>
+                <h4 class="card-title">Driver Details</h4></div>
+            <input id="tab1" type="radio" name="tabs" checked>
+            <label for="tab1">Details</label>
+
+            <input id="tab12" type="radio" name="tabs">
+            <label for="tab12">Image Upload</label>
+
+            <input id="tab2" type="radio" name="tabs">
+            <label for="tab2">Documents</label>
+
+            <input id="tab3" type="radio" name="tabs">
+            <label for="tab3">Bank Account</label>
+
+            <input id="tab4" type="radio" name="tabs">
+            <label for="tab4">Experience</label>
+
+            <input id="tab5" type="radio" name="tabs">
+            <label for="tab5">Pay</label>
+
+            <input id="tab6" type="radio" name="tabs">
+            <label for="tab6">Driver App</label>
+
+            <input id="tab7" type="radio" name="tabs">
+            <label for="tab7">Web Portal</label>
+
+            <input id="tab8" type="radio" name="tabs">
+            <label for="tab8">Off-Shift/Holiday</label>
+
+            <input id="tab9" type="radio" name="tabs">
+            <label for="tab9">Notes</label>
+
+            <input id="tab10" type="radio" name="tabs">
+            <label for="tab10">Blacklist</label>
+
+            <input id="tab11" type="radio" name="tabs">
+            <label for="tab11">Regions Covered</label>
+            <div class="alert alert-danger mt-3" role="alert" *ngIf="err_message!=null">
+                {{ err_message }}
+            </div>
+            <section id="content1" class="contab bordersection">
+                <form [formGroup]="DriverProfileform"  (ngSubmit)="AddDriverDetails()">
+
+                    <div class="row">
+
+                        <div class="col-md-6 col-sm-12 leftrowdriv">
+                            <div class="box1drive">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Name:</label>
+                                            <input type="text" formControlName="DriverName" class="form-control" [ngClass]="{ 'is-invalid': submitted && DriverProfileformData.DriverName.errors }" placeholder="Driver name"/>
+                                            <div *ngIf="submitted && DriverProfileformData.DriverName.errors" class="invalid-feedback">
+                                             <div *ngIf="DriverProfileformData.DriverName.errors.required">Company Name is required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Call sign:</label>
+                                            <input type="text" formControlName="Callsign" class="form-control" [ngClass]="{ 'is-invalid': submitted && DriverProfileformData.Callsign.errors }" placeholder="sign"/>
+                                             <div *ngIf="submitted && DriverProfileformData.Callsign.errors" class="invalid-feedback">
+                                            <div *ngIf="DriverProfileformData.Callsign.errors.required">Call sign is required</div>
+                                             </div>
+                                        </div>
+                                    </div>
+                                  
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <div class="form-group">
+                                                
+                                            <label>Salutation:</label>
+                                            <select class="form-control" formControlName="salutation" >
+                                                <option value="Mr">Mr.</option>
+                                                <option value="Miss">Miss.</option>
+                                                <option value="Mrs">Mrs.</option>
+                                                <option value="Dr">Dr.</option>
+                                                </select>
+                                               
+
+                                        </div>
+                                    </div>
+                                  
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Forename:</label>
+                                            <input type="text" formControlName="Forename" class="form-control" placeholder="Forename"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Surname:</label>
+                                            <input type="text" formControlName="surname" class="form-control" placeholder="surname"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 addressrw">
+                                        <div class="form-group">
+                                            <label>Address:</label>
+                                            <input type="text" formControlName="address" class="form-control" placeholder="Address"/>
+                                            <input type="text" formControlName="address1" class="form-control" placeholder="Address"/>
+                                            <input type="text" formControlName="address2" class="form-control" placeholder="Address"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Town:</label>
+                                            <input type="text" formControlName="Town" class="form-control" placeholder="Town"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>County:</label>
+                                            <input type="text" formControlName="County" class="form-control" placeholder="County"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Postcode:</label>
+                                            <input type="text" formControlName="PostCode" class="form-control" placeholder="PostCode"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Country:</label>
+                                            <select class="form-control" formControlName="Country">
+                                                <option value="Afghanistan">Afghanistan</option>
+                                                <option value="Albania">Albania</option>
+                                                <option value="Algeria">Algeria</option>
+                                                <option value="American Samoa">American Samoa</option>
+                                                <option value="Andorra">Andorra</option>
+                                                <option value="Angola">Angola</option>
+                                                <option value="Anguilla">Anguilla</option>
+                                                <option value="Antartica">Antarctica</option>
+                                                <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                                <option value="Argentina">Argentina</option>
+                                                <option value="Armenia">Armenia</option>
+                                                <option value="Aruba">Aruba</option>
+                                                <option value="Australia">Australia</option>
+                                                <option value="Austria">Austria</option>
+                                                <option value="Azerbaijan">Azerbaijan</option>
+                                                <option value="Bahamas">Bahamas</option>
+                                                <option value="Bahrain">Bahrain</option>
+                                                <option value="Bangladesh">Bangladesh</option>
+                                                <option value="Barbados">Barbados</option>
+                                                <option value="Belarus">Belarus</option>
+                                                <option value="Belgium">Belgium</option>
+                                                <option value="Belize">Belize</option>
+                                                <option value="Benin">Benin</option>
+                                                <option value="Bermuda">Bermuda</option>
+                                                <option value="Bhutan">Bhutan</option>
+                                                <option value="Bolivia">Bolivia</option>
+                                                <option value="Bosnia and Herzegowina">Bosnia and Herzegowina</option>
+                                                <option value="Botswana">Botswana</option>
+                                                <option value="Bouvet Island">Bouvet Island</option>
+                                                <option value="Brazil">Brazil</option>
+                                                <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                                                <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                                <option value="Bulgaria">Bulgaria</option>
+                                                <option value="Burkina Faso">Burkina Faso</option>
+                                                <option value="Burundi">Burundi</option>
+                                                <option value="Cambodia">Cambodia</option>
+                                                <option value="Cameroon">Cameroon</option>
+                                                <option value="Canada">Canada</option>
+                                                <option value="Cape Verde">Cape Verde</option>
+                                                <option value="Cayman Islands">Cayman Islands</option>
+                                                <option value="Central African Republic">Central African Republic</option>
+                                                <option value="Chad">Chad</option>
+                                                <option value="Chile">Chile</option>
+                                                <option value="China">China</option>
+                                                <option value="Christmas Island">Christmas Island</option>
+                                                <option value="Cocos Islands">Cocos (Keeling) Islands</option>
+                                                <option value="Colombia">Colombia</option>
+                                                <option value="Comoros">Comoros</option>
+                                                <option value="Congo">Congo</option>
+                                                <option value="Congo">Congo, the Democratic Republic of the</option>
+                                                <option value="Cook Islands">Cook Islands</option>
+                                                <option value="Costa Rica">Costa Rica</option>
+                                                <option value="Cota D'Ivoire">Cote d'Ivoire</option>
+                                                <option value="Croatia">Croatia (Hrvatska)</option>
+                                                <option value="Cuba">Cuba</option>
+                                                <option value="Cyprus">Cyprus</option>
+                                                <option value="Czech Republic">Czech Republic</option>
+                                                <option value="Denmark">Denmark</option>
+                                                <option value="Djibouti">Djibouti</option>
+                                                <option value="Dominica">Dominica</option>
+                                                <option value="Dominican Republic">Dominican Republic</option>
+                                                <option value="East Timor">East Timor</option>
+                                                <option value="Ecuador">Ecuador</option>
+                                                <option value="Egypt">Egypt</option>
+                                                <option value="El Salvador">El Salvador</option>
+                                                <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                                <option value="Eritrea">Eritrea</option>
+                                                <option value="Estonia">Estonia</option>
+                                                <option value="Ethiopia">Ethiopia</option>
+                                                <option value="Falkland Islands">Falkland Islands (Malvinas)</option>
+                                                <option value="Faroe Islands">Faroe Islands</option>
+                                                <option value="Fiji">Fiji</option>
+                                                <option value="Finland">Finland</option>
+                                                <option value="France">France</option>
+                                                <option value="France Metropolitan">France, Metropolitan</option>
+                                                <option value="French Guiana">French Guiana</option>
+                                                <option value="French Polynesia">French Polynesia</option>
+                                                <option value="French Southern Territories">French Southern Territories</option>
+                                                <option value="Gabon">Gabon</option>
+                                                <option value="Gambia">Gambia</option>
+                                                <option value="Georgia">Georgia</option>
+                                                <option value="Germany">Germany</option>
+                                                <option value="Ghana">Ghana</option>
+                                                <option value="Gibraltar">Gibraltar</option>
+                                                <option value="Greece">Greece</option>
+                                                <option value="Greenland">Greenland</option>
+                                                <option value="Grenada">Grenada</option>
+                                                <option value="Guadeloupe">Guadeloupe</option>
+                                                <option value="Guam">Guam</option>
+                                                <option value="Guatemala">Guatemala</option>
+                                                <option value="Guinea">Guinea</option>
+                                                <option value="Guinea-Bissau">Guinea-Bissau</option>
+                                                <option value="Guyana">Guyana</option>
+                                                <option value="Haiti">Haiti</option>
+                                                <option value="Heard and McDonald Islands">Heard and Mc Donald Islands</option>
+                                                <option value="Holy See">Holy See (Vatican City State)</option>
+                                                <option value="Honduras">Honduras</option>
+                                                <option value="Hong Kong">Hong Kong</option>
+                                                <option value="Hungary">Hungary</option>
+                                                <option value="Iceland">Iceland</option>
+                                                <option value="India">India</option>
+                                                <option value="Indonesia">Indonesia</option>
+                                                <option value="Iran">Iran (Islamic Republic of)</option>
+                                                <option value="Iraq">Iraq</option>
+                                                <option value="Ireland">Ireland</option>
+                                                <option value="Israel">Israel</option>
+                                                <option value="Italy">Italy</option>
+                                                <option value="Jamaica">Jamaica</option>
+                                                <option value="Japan">Japan</option>
+                                                <option value="Jordan">Jordan</option>
+                                                <option value="Kazakhstan">Kazakhstan</option>
+                                                <option value="Kenya">Kenya</option>
+                                                <option value="Kiribati">Kiribati</option>
+                                                <option value="Democratic People's Republic of Korea">Korea, Democratic People's Republic of</option>
+                                                <option value="Korea">Korea, Republic of</option>
+                                                <option value="Kuwait">Kuwait</option>
+                                                <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                                <option value="Lao">Lao People's Democratic Republic</option>
+                                                <option value="Latvia">Latvia</option>
+                                                <option value="Lebanon" selected>Lebanon</option>
+                                                <option value="Lesotho">Lesotho</option>
+                                                <option value="Liberia">Liberia</option>
+                                                <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                                                <option value="Liechtenstein">Liechtenstein</option>
+                                                <option value="Lithuania">Lithuania</option>
+                                                <option value="Luxembourg">Luxembourg</option>
+                                                <option value="Macau">Macau</option>
+                                                <option value="Macedonia">Macedonia, The Former Yugoslav Republic of</option>
+                                                <option value="Madagascar">Madagascar</option>
+                                                <option value="Malawi">Malawi</option>
+                                                <option value="Malaysia">Malaysia</option>
+                                                <option value="Maldives">Maldives</option>
+                                                <option value="Mali">Mali</option>
+                                                <option value="Malta">Malta</option>
+                                                <option value="Marshall Islands">Marshall Islands</option>
+                                                <option value="Martinique">Martinique</option>
+                                                <option value="Mauritania">Mauritania</option>
+                                                <option value="Mauritius">Mauritius</option>
+                                                <option value="Mayotte">Mayotte</option>
+                                                <option value="Mexico">Mexico</option>
+                                                <option value="Micronesia">Micronesia, Federated States of</option>
+                                                <option value="Moldova">Moldova, Republic of</option>
+                                                <option value="Monaco">Monaco</option>
+                                                <option value="Mongolia">Mongolia</option>
+                                                <option value="Montserrat">Montserrat</option>
+                                                <option value="Morocco">Morocco</option>
+                                                <option value="Mozambique">Mozambique</option>
+                                                <option value="Myanmar">Myanmar</option>
+                                                <option value="Namibia">Namibia</option>
+                                                <option value="Nauru">Nauru</option>
+                                                <option value="Nepal">Nepal</option>
+                                                <option value="Netherlands">Netherlands</option>
+                                                <option value="Netherlands Antilles">Netherlands Antilles</option>
+                                                <option value="New Caledonia">New Caledonia</option>
+                                                <option value="New Zealand">New Zealand</option>
+                                                <option value="Nicaragua">Nicaragua</option>
+                                                <option value="Niger">Niger</option>
+                                                <option value="Nigeria">Nigeria</option>
+                                                <option value="Niue">Niue</option>
+                                                <option value="Norfolk Island">Norfolk Island</option>
+                                                <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                                                <option value="Norway">Norway</option>
+                                                <option value="Oman">Oman</option>
+                                                <option value="Pakistan">Pakistan</option>
+                                                <option value="Palau">Palau</option>
+                                                <option value="Panama">Panama</option>
+                                                <option value="Papua New Guinea">Papua New Guinea</option>
+                                                <option value="Paraguay">Paraguay</option>
+                                                <option value="Peru">Peru</option>
+                                                <option value="Philippines">Philippines</option>
+                                                <option value="Pitcairn">Pitcairn</option>
+                                                <option value="Poland">Poland</option>
+                                                <option value="Portugal">Portugal</option>
+                                                <option value="Puerto Rico">Puerto Rico</option>
+                                                <option value="Qatar">Qatar</option>
+                                                <option value="Reunion">Reunion</option>
+                                                <option value="Romania">Romania</option>
+                                                <option value="Russia">Russian Federation</option>
+                                                <option value="Rwanda">Rwanda</option>
+                                                <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                                <option value="Saint LUCIA">Saint LUCIA</option>
+                                                <option value="Saint Vincent">Saint Vincent and the Grenadines</option>
+                                                <option value="Samoa">Samoa</option>
+                                                <option value="San Marino">San Marino</option>
+                                                <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                                <option value="Senegal">Senegal</option>
+                                                <option value="Seychelles">Seychelles</option>
+                                                <option value="Sierra">Sierra Leone</option>
+                                                <option value="Singapore">Singapore</option>
+                                                <option value="Slovakia">Slovakia (Slovak Republic)</option>
+                                                <option value="Slovenia">Slovenia</option>
+                                                <option value="Solomon Islands">Solomon Islands</option>
+                                                <option value="Somalia">Somalia</option>
+                                                <option value="South Africa">South Africa</option>
+                                                <option value="South Georgia">South Georgia and the South Sandwich Islands</option>
+                                                <option value="Span">Spain</option>
+                                                <option value="SriLanka">Sri Lanka</option>
+                                                <option value="St. Helena">St. Helena</option>
+                                                <option value="St. Pierre and Miguelon">St. Pierre and Miquelon</option>
+                                                <option value="Sudan">Sudan</option>
+                                                <option value="Suriname">Suriname</option>
+                                                <option value="Svalbard">Svalbard and Jan Mayen Islands</option>
+                                                <option value="Swaziland">Swaziland</option>
+                                                <option value="Sweden">Sweden</option>
+                                                <option value="Switzerland">Switzerland</option>
+                                                <option value="Syria">Syrian Arab Republic</option>
+                                                <option value="Taiwan">Taiwan, Province of China</option>
+                                                <option value="Tajikistan">Tajikistan</option>
+                                                <option value="Tanzania">Tanzania, United Republic of</option>
+                                                <option value="Thailand">Thailand</option>
+                                                <option value="Togo">Togo</option>
+                                                <option value="Tokelau">Tokelau</option>
+                                                <option value="Tonga">Tonga</option>
+                                                <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                                                <option value="Tunisia">Tunisia</option>
+                                                <option value="Turkey">Turkey</option>
+                                                <option value="Turkmenistan">Turkmenistan</option>
+                                                <option value="Turks and Caicos">Turks and Caicos Islands</option>
+                                                <option value="Tuvalu">Tuvalu</option>
+                                                <option value="Uganda">Uganda</option>
+                                                <option value="Ukraine">Ukraine</option>
+                                                <option value="United Arab Emirates">United Arab Emirates</option>
+                                                <option value="United Kingdom">United Kingdom</option>
+                                                <option value="United States">United States</option>
+                                                <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                                                <option value="Uruguay">Uruguay</option>
+                                                <option value="Uzbekistan">Uzbekistan</option>
+                                                <option value="Vanuatu">Vanuatu</option>
+                                                <option value="Venezuela">Venezuela</option>
+                                                <option value="Vietnam">Viet Nam</option>
+                                                <option value="Virgin Islands (British)">Virgin Islands (British)</option>
+                                                <option value="Virgin Islands (U.S)">Virgin Islands (U.S.)</option>
+                                                <option value="Wallis and Futana Islands">Wallis and Futuna Islands</option>
+                                                <option value="Western Sahara">Western Sahara</option>
+                                                <option value="Yemen">Yemen</option>
+                                                <option value="Yugoslavia">Yugoslavia</option>
+                                                <option value="Zambia">Zambia</option>
+                                                <option value="Zimbabwe">Zimbabwe</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- box 1 completed -->
+
+                            <div class="box1drive">
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Telephone:</label>
+                                            <input type="text" formControlName="Telephone" class="form-control" placeholder="Telephone"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Mobile:</label>
+                                            <input type="text" formControlName="Mobile" class="form-control" placeholder="Mobile"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Emergency:</label>
+                                            <input type="text" formControlName="Emergency" class="form-control" placeholder="Emergency"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Email:</label>
+                                            <input type="text" formControlName="Email" class="form-control" [ngClass]="{ 'is-invalid': submitted && DriverProfileformData.Email.errors }" placeholder="Email"/>
+                                            <div *ngIf="submitted && DriverProfileformData.Email.errors" class="invalid-feedback">
+                                            <div *ngIf="DriverProfileformData.Email.errors.pattern">Wrong Email Format</div>
+                                              </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- box 1 completed -->
+
+                            <div class="box1drive">
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Vechile:</label>
+                                            <input type="text" formControlName="Vechile1" class="form-control" [ngClass]="{ 'is-invalid': submitted && DriverProfileformData.Vechile1.errors }"  placeholder="Vechile"/>
+                                            <div *ngIf="submitted && DriverProfileformData.Vechile1.errors" class="invalid-feedback">
+                                                <div *ngIf="DriverProfileformData.Vechile1.errors.required">Vechile is required</div>
+                                                 </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Description:</label>
+                                            <input type="text" formControlName="Description" class="form-control" placeholder="Description"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Registration:</label>
+                                            <input type="text" formControlName="Registration" class="form-control" [ngClass]="{ 'is-invalid': submitted && DriverProfileformData.Registration.errors }" placeholder="Registration"/>
+                                            <div *ngIf="submitted && DriverProfileformData.Registration.errors" class="invalid-feedback">
+                                                <div *ngIf="DriverProfileformData.Registration.errors.required">Registration is required</div>
+                                               </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Booking class:</label>
+                                            <select class="form-control" formControlName="booking_class">
+                                                <option value="Executive Saloon">Executive Saloon</option>
+                                                <option value="Executive Extate">Executive Extate</option>
+                                                <option value="Executive MPV">Executive MPV</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Right part  -->
+
+                        <div class="col-md-6 col-sm-12 rightrowdriv">
+
+                            <div class="box1drive">
+
+                                <div class="row">
+                                    <div class="col-md-8 col-sm-6 col-xs-12">
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <label>Date of birth:</label>
+                                                    <div class="input-group mb-2">
+                                                         <div class="input-group-prepend smallicon">
+                                                            <span class="input-group-text" id="basic-addon22"  (click)="dp.toggle()"><i class="fa fa-calendar"></i></span>
+                                                        </div>
+                                                       <!-- <input type="text" formControlName="DOb" class="form-control" placeholder="DD/MM/YYYY" [ngClass]="{ 'is-invalid': submitted && DriverProfileformData.DOb.errors }"/>
+                                                        <div *ngIf="submitted && DriverProfileformData.DOb.errors" class="invalid-feedback">
+                                                            <div *ngIf="DriverProfileformData.DOb.errors.required">DOB is required</div>
+                                                             </div> -->
+                                                             <input id="DOb" class="form-control" formControlName="DOb" [ngClass]="{ 'is-invalid': submitted && DriverProfileformData.DOb.errors }" placeholder="DOb" name="dp" ngbDatepicker #dp="ngbDatepicker">
+                                                                <div *ngIf="submitted && DriverProfileformData.DOb.errors" class="invalid-feedback">
+                                                                <div *ngIf="DriverProfileformData.DOb.errors.required">From Date is required</div>
+                                                            </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <label>N.I. number:</label>
+                                                    <input type="text" formControlName="NInumber" class="form-control" placeholder="NInumber" [ngClass]="{ 'is-invalid': submitted && DriverProfileformData.NInumber.errors }"/>
+                                                    
+    <div *ngIf="submitted && DriverProfileformData.NInumber.errors" class="invalid-feedback">
+    <div *ngIf="DriverProfileformData.NInumber.errors.required">NInumber is required</div>
+     </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <label>Start date:</label>
+                                                    <div class="input-group mb-2">
+                                                        <div class="input-group-prepend smallicon">
+                                                            <span class="input-group-text" id="basic-addon22" (click)="Sd.toggle()"><i class="fa fa-calendar"></i></span>
+                                                        </div>
+                                                        <input id="Start" class="form-control" formControlName="Start" placeholder="start date" name="Sd" ngbDatepicker #Sd="ngbDatepicker">
+                                                                <!-- <div *ngIf="submitted && DriverProfileformData.Start.errors" class="invalid-feedback">
+                                                                <div *ngIf="DriverProfileformData.Start.errors.required">Start Date is required</div> -->
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <label>Finish date:</label>
+                                                    <div class="input-group mb-2">
+                                                        <div class="input-group-prepend smallicon">
+                                                            <span class="input-group-text" id="basic-addon22" (click)="Fd.toggle()"><i class="fa fa-calendar"></i></span>
+                                                        </div>
+                                                        <input id="Finish" class="form-control" formControlName="Finish" placeholder="finish date" name="Fd" ngbDatepicker #Fd="ngbDatepicker">
+                                                                <!-- <div *ngIf="submitted && DriverProfileformData.Finish.errors" class="invalid-feedback">
+                                                                <div *ngIf="DriverProfileformData.Finish.errors.required">From Date is required</div> -->
+                                                           
+                                                   
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <label>Company:</label>
+                                                    <select class="form-control" formControlName="Company" >
+                                                        <option value="Company 1">Company 1</option>
+                                                        <option value="Company 2">Company 2</option>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <div class="form-group">
+                                                    <label>Shift:</label>
+                                                    <select class="form-control" formControlName="Shift" >
+                                                        <option value="Day" selected>Day</option>
+                                                        <option value="Night">Night</option>
+                                                    </select>
+                                                    <div *ngIf="submitted && DriverProfileformData.Shift.errors" class="invalid-feedback" [ngClass]="{ 'is-invalid': submitted && DriverProfileformData.Shift.errors }">
+                                                        <div *ngIf="DriverProfileformData.Shift.errors.required">Shift is required</div>
+                                                         </div>
+            
+                                                </div>
+                                            </div>
+
+                                            <!-- <div class="col-md-12 col-sm-12 col-xs-12">
+                                                <div class="form-group linkbtn">
+                                                    <div class="pull-left">
+                                                        <label>Photograph: </label>
+                                                    </div>
+                                                    <a href="javascript:void(0);" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Add</a> |
+                                                    <a href="javascript:void(0);">Remove</a>
+                                                    <div class="tabrow mt-10">
+                                                        <blockquote id="collapseExample" [ngbCollapse]="isCollapsed">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <input type="file"id="file"
+                                                                    (change)="fileChange($event)" accept=".pdf,.doc,.docx,.jpg">
+                                                                    <input type="button" class="btn btn-info" value="submit" />
+                                                                </div>
+                                                            </div>
+                                                        </blockquote>
+
+                                                    </div>
+
+                                                </div>
+                                            </div> -->
+
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="col-md-4 col-sm-6 col-xs-12">
+                                        <img src="./assets/images/profile-sq.jpg" width="100%" alt="" />
+                                    </div> -->
+
+                                </div>
+                            </div>
+
+                            <!-- box 1 completed -->
+
+                            <div class="box1drive">
+
+                                <div class="row">
+
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Driving license number</label>
+                                            <input type="text" formControlName="License" class="form-control" placeholder="License" [ngClass]="{ 'is-invalid': submitted && DriverProfileformData.License.errors }"/>
+                                            <div *ngIf="submitted && DriverProfileformData.License.errors" class="invalid-feedback">
+                                                <div *ngIf="DriverProfileformData.License.errors.required">License number is required</div>
+                                                 </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Advanced driver course(s)</label>
+                                            <input type="text" formControlName="Advanced" class="form-control" placeholder="Advanced driver details"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-md-2 col-sm-2 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Points</label>
+                                            <input type="text" formControlName="Points" class="form-control" placeholder="Point"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Details of points</label>
+                                            <input type="text" formControlName="Details" class="form-control" placeholder="Details"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Licensing authority</label>
+                                            <input type="text" formControlName="Licensing" class="form-control" placeholder="Licensing authority"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Badge number</label>
+                                            <input type="text" formControlName="Badge" class="form-control" placeholder="Badge Number"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <div class="form-group">
+                                            <label>License number</label>
+                                            <input type="text" formControlName="LicenseNumber" class="form-control" placeholder="License Number"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <div class="form-group">
+                                            <label>operator's license number</label>
+                                            <input type="text" formControlName="OperatorLicence" class="form-control" placeholder="Operator Licence Number"/>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-md-12 mt-10">
+                                        <div class="pull-left">
+                                            <label class="newbox">
+                                                <input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Pending" formControlName="Pending"/>
+                                                <span class="checkmark"></span>
+                                                <label for="Pending"> VAT registered, no.</label>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6 col-xs-12 pull-left">
+                                            <div class="form-group">
+                                                <input type="text" formControlName="NInumber" class="form-control" placeholder="NInumber"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 mb-25">
+                                        <div class="pull-left">
+                                            <label class="newbox">
+                                                <input type="checkbox" name="fancy-checkbox-primary" value="Driverlist" id="Driverlist" formControlName="Driverlist"/>
+                                                <span class="checkmark"></span>
+                                                <label for="Driverlist"> Include on P.C.O driver list</label>
+
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 mb-25">
+                                        <div class="pull-left">
+                                            <label class="newbox">
+                                                <input type="checkbox" name="fancy-checkbox-primary" value="costumer_account" id="costumer_account" formControlName="costumer_account" />
+                                                <span class="checkmark"></span>
+                                                <label for="costumer_account"> Hide the costumer account name on bookings sent to the driver</label>
+
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 mb-25">
+                                        <div class="pull-left">
+                                            <label class="newbox">
+                                                <input type="checkbox" name="fancy-checkbox-primary" value="passenger_phone" id="passenger_phone" formControlName="passenger_phone" />
+                                                <span class="checkmark"></span>
+                                                <label for="passenger_phone"> Hide the passenger phone number on bookings sent to the driver</label>
+
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 mb-25">
+                                        <div class="pull-left">
+                                            <label class="newbox">
+                                                <input type="checkbox" name="fancy-checkbox-primary" value="passenger_mobile" id="passenger_mobile" formControlName="passenger_mobile" />
+                                                <span class="checkmark"></span>
+                                                <label for="passenger_mobile"> Hide the passenger Mobile number on bookings sent to the driver</label>
+
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 mb-25">
+                                        <div class="pull-left">
+                                            <label class="newbox">
+                                                <input type="checkbox" name="fancy-checkbox-primary" value="passenger_email" id="passenger_email" formControlName="passenger_email" />
+                                                <span class="checkmark"></span>
+                                                <label for="passenger_email"> Hide the passenger email address on bookings sent to the driver</label>
+
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="pull-left">
+                                            <label class="newbox">
+                                                <input type="checkbox" name="fancy-checkbox-primary" value="bookings_sent" id="bookings_sent" formControlName="bookings_sent" />
+                                                <span class="checkmark"></span>
+                                                <label for="bookings_sent"> Hide the P.A/Secretary on bookings sent to the driver</label>
+
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 mt-10 text-center">
+                            <button class="btn btn-success m-r-10" >Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+            </section>
+
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    function get_data() {
+                        var props = ['javascript', "d3", "jQuery", "SVG", "XYZ", "Abc"];
+                        var out = [];
+                        for (var i = 0; i < props.length; i++) {
+                            out.push({
+                                "name": props[i],
+                                "hvalue": Math.floor(Math.random() * 1000)
+                            });
+                        };
+                        return out;
+                    }
+
+                    // init the pie
+                    $(".exp").donutpie();
+
+                    // update it with some fake data
+                    $(".exp").donutpie('update', get_data());
+
+                    // keep updating every x sec
+                    setInterval(function() {
+                        $(".exp").donutpie('update', get_data());
+                    }, 120000);
+
+                });
+            </script>
+
+            <section id="content2" class="contab bordersection">
+                <form [formGroup]="DocumentForm"  (ngSubmit)="AddDriverDocument()">
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="box1drive">
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Drivers license</label>
+                                            <input class="form-control" type="file"id="drivers_license_img" (change)="Documentchange($event)" accept=".pdf,.doc,.docx,.jpg">
+                                            <!-- <input type="file" name="pic" accept="image/*" class="form-control"> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Logbook</label>
+                                            <input class="form-control" type="file"id="logbook_img" (change)="Documentchange($event)" accept=".pdf,.doc,.docx,.jpg">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Insurance certificate</label>
+                                            <input class="form-control" type="file"id="insuranceCertificate_img" (change)="Documentchange($event)" accept=".pdf,.doc,.docx,.jpg">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label>M.O.T. certificate</label>
+                                            <input class="form-control" type="file"id="motCertificate_img" (change)="Documentchange($event)" accept=".pdf,.doc,.docx,.jpg">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label>License</label>
+                                            <input class="form-control" type="file"id="license_img" (change)="Documentchange($event)" accept=".pdf,.doc,.docx,.jpg">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label>P.C.O. car test</label>
+                                            <input class="form-control" type="file"id="pcoCartest_img" (change)="Documentchange($event)" accept=".pdf,.doc,.docx,.jpg">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="box1drive">
+                                <div class="row">
+
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Drivers license due</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend smallicon">
+                                                    <span class="input-group-text" id="basic-addon22"><i class="fa fa-calendar"></i></span>
+                                                </div>
+                                                <input class="form-control" formControlName="Driverlicensedue" placeholder="DD/MM/YYYY" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Road tax due</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend smallicon">
+                                                    <span class="input-group-text" id="basic-addon22"><i class="fa fa-calendar"></i></span>
+                                                </div>
+                                                <input class="form-control" formControlName="RoadTax" placeholder="DD/MM/YYYY" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Insurance due</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend smallicon">
+                                                    <span class="input-group-text" id="basic-addon22"><i class="fa fa-calendar"></i></span>
+                                                </div>
+                                                <input class="form-control" formControlName="InsuranceDue" placeholder="DD/MM/YYYY" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label>M.O.T. due</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend smallicon">
+                                                    <span class="input-group-text" id="basic-addon22"><i class="fa fa-calendar"></i></span>
+                                                </div>
+                                                <input class="form-control" formControlName="MOTDue" placeholder="DD/MM/YYYY" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label>License due</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend smallicon">
+                                                    <span class="input-group-text" id="basic-addon22"><i class="fa fa-calendar"></i></span>
+                                                </div>
+                                                <input class="form-control" formControlName="LicenseDue" placeholder="DD/MM/YYYY" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label>P.C.O. car test due</label>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend smallicon">
+                                                    <span class="input-group-text" id="basic-addon22"><i class="fa fa-calendar"></i></span>
+                                                </div>
+                                                <input class="form-control" formControlName="PCOCartestDue" placeholder="DD/MM/YYYY" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                            <button class="btn btn-success m-r-10" type="submit">Submit</button>
+                            <button class="btn btn-info" (click)="Clear();" type="submit">Clear</button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+            <section id="content3" class="contab bordersection">
+                <form [formGroup]="DriverBankform"  (ngSubmit)="AddDriverBankDetail()">
+
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="box1drive">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Bank name:</label>
+                                            <input id="BankName" name="BankName" type="text" formControlName="BankName" class="form-control">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 addressrw">
+                                        <div class="form-group">
+                                            <label>Address:</label>
+                                            <input id="address1" name="address1" type="text" formControlName="address1" class="form-control">
+                                            <input id="address2" name="address2" type="text" formControlName="address2" class="form-control">
+                                            <input id="address3" name="address3" type="text" formControlName="address3" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Town:</label>
+                                            <input id="Town" name="Town" formControlName="Town" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="">
+                                            <label>County:</label>
+                                            <input id="County" name="County" formControlName="County" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Postcode:</label>
+                                            <div class="fullrow">
+                                                <div class="pull-left m-r-10">
+                                                    <input id="Postcode" name="Postcode" formControlName="PostCode" type="text" class="form-control sep2">
+                                                </div>
+                                                <div class="pull-left">
+                                                    <button class="btn btn-info" type="button">Lookup</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="">
+                                            <label>Country:</label>
+                                            <select class="form-control" id="Country" formControlName="Country" name="Country">
+                                                <option value="Afghanistan">Afghanistan</option>
+                                                <option value="Albania">Albania</option>
+                                                <option value="Algeria">Algeria</option>
+                                                <option value="American Samoa">American Samoa</option>
+                                                <option value="Andorra">Andorra</option>
+                                                <option value="Angola">Angola</option>
+                                                <option value="Anguilla">Anguilla</option>
+                                                <option value="Antartica">Antarctica</option>
+                                                <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                                <option value="Argentina">Argentina</option>
+                                                <option value="Armenia">Armenia</option>
+                                                <option value="Aruba">Aruba</option>
+                                                <option value="Australia">Australia</option>
+                                                <option value="Austria">Austria</option>
+                                                <option value="Azerbaijan">Azerbaijan</option>
+                                                <option value="Bahamas">Bahamas</option>
+                                                <option value="Bahrain">Bahrain</option>
+                                                <option value="Bangladesh">Bangladesh</option>
+                                                <option value="Barbados">Barbados</option>
+                                                <option value="Belarus">Belarus</option>
+                                                <option value="Belgium">Belgium</option>
+                                                <option value="Belize">Belize</option>
+                                                <option value="Benin">Benin</option>
+                                                <option value="Bermuda">Bermuda</option>
+                                                <option value="Bhutan">Bhutan</option>
+                                                <option value="Bolivia">Bolivia</option>
+                                                <option value="Bosnia and Herzegowina">Bosnia and Herzegowina</option>
+                                                <option value="Botswana">Botswana</option>
+                                                <option value="Bouvet Island">Bouvet Island</option>
+                                                <option value="Brazil">Brazil</option>
+                                                <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                                                <option value="Brunei Darussalam">Brunei Darussalam</option>
+                                                <option value="Bulgaria">Bulgaria</option>
+                                                <option value="Burkina Faso">Burkina Faso</option>
+                                                <option value="Burundi">Burundi</option>
+                                                <option value="Cambodia">Cambodia</option>
+                                                <option value="Cameroon">Cameroon</option>
+                                                <option value="Canada">Canada</option>
+                                                <option value="Cape Verde">Cape Verde</option>
+                                                <option value="Cayman Islands">Cayman Islands</option>
+                                                <option value="Central African Republic">Central African Republic</option>
+                                                <option value="Chad">Chad</option>
+                                                <option value="Chile">Chile</option>
+                                                <option value="China">China</option>
+                                                <option value="Christmas Island">Christmas Island</option>
+                                                <option value="Cocos Islands">Cocos (Keeling) Islands</option>
+                                                <option value="Colombia">Colombia</option>
+                                                <option value="Comoros">Comoros</option>
+                                                <option value="Congo">Congo</option>
+                                                <option value="Congo">Congo, the Democratic Republic of the</option>
+                                                <option value="Cook Islands">Cook Islands</option>
+                                                <option value="Costa Rica">Costa Rica</option>
+                                                <option value="Cota D'Ivoire">Cote d'Ivoire</option>
+                                                <option value="Croatia">Croatia (Hrvatska)</option>
+                                                <option value="Cuba">Cuba</option>
+                                                <option value="Cyprus">Cyprus</option>
+                                                <option value="Czech Republic">Czech Republic</option>
+                                                <option value="Denmark">Denmark</option>
+                                                <option value="Djibouti">Djibouti</option>
+                                                <option value="Dominica">Dominica</option>
+                                                <option value="Dominican Republic">Dominican Republic</option>
+                                                <option value="East Timor">East Timor</option>
+                                                <option value="Ecuador">Ecuador</option>
+                                                <option value="Egypt">Egypt</option>
+                                                <option value="El Salvador">El Salvador</option>
+                                                <option value="Equatorial Guinea">Equatorial Guinea</option>
+                                                <option value="Eritrea">Eritrea</option>
+                                                <option value="Estonia">Estonia</option>
+                                                <option value="Ethiopia">Ethiopia</option>
+                                                <option value="Falkland Islands">Falkland Islands (Malvinas)</option>
+                                                <option value="Faroe Islands">Faroe Islands</option>
+                                                <option value="Fiji">Fiji</option>
+                                                <option value="Finland">Finland</option>
+                                                <option value="France">France</option>
+                                                <option value="France Metropolitan">France, Metropolitan</option>
+                                                <option value="French Guiana">French Guiana</option>
+                                                <option value="French Polynesia">French Polynesia</option>
+                                                <option value="French Southern Territories">French Southern Territories</option>
+                                                <option value="Gabon">Gabon</option>
+                                                <option value="Gambia">Gambia</option>
+                                                <option value="Georgia">Georgia</option>
+                                                <option value="Germany">Germany</option>
+                                                <option value="Ghana">Ghana</option>
+                                                <option value="Gibraltar">Gibraltar</option>
+                                                <option value="Greece">Greece</option>
+                                                <option value="Greenland">Greenland</option>
+                                                <option value="Grenada">Grenada</option>
+                                                <option value="Guadeloupe">Guadeloupe</option>
+                                                <option value="Guam">Guam</option>
+                                                <option value="Guatemala">Guatemala</option>
+                                                <option value="Guinea">Guinea</option>
+                                                <option value="Guinea-Bissau">Guinea-Bissau</option>
+                                                <option value="Guyana">Guyana</option>
+                                                <option value="Haiti">Haiti</option>
+                                                <option value="Heard and McDonald Islands">Heard and Mc Donald Islands</option>
+                                                <option value="Holy See">Holy See (Vatican City State)</option>
+                                                <option value="Honduras">Honduras</option>
+                                                <option value="Hong Kong">Hong Kong</option>
+                                                <option value="Hungary">Hungary</option>
+                                                <option value="Iceland">Iceland</option>
+                                                <option value="India">India</option>
+                                                <option value="Indonesia">Indonesia</option>
+                                                <option value="Iran">Iran (Islamic Republic of)</option>
+                                                <option value="Iraq">Iraq</option>
+                                                <option value="Ireland">Ireland</option>
+                                                <option value="Israel">Israel</option>
+                                                <option value="Italy">Italy</option>
+                                                <option value="Jamaica">Jamaica</option>
+                                                <option value="Japan">Japan</option>
+                                                <option value="Jordan">Jordan</option>
+                                                <option value="Kazakhstan">Kazakhstan</option>
+                                                <option value="Kenya">Kenya</option>
+                                                <option value="Kiribati">Kiribati</option>
+                                                <option value="Democratic People's Republic of Korea">Korea, Democratic People's Republic of</option>
+                                                <option value="Korea">Korea, Republic of</option>
+                                                <option value="Kuwait">Kuwait</option>
+                                                <option value="Kyrgyzstan">Kyrgyzstan</option>
+                                                <option value="Lao">Lao People's Democratic Republic</option>
+                                                <option value="Latvia">Latvia</option>
+                                                <option value="Lebanon" selected>Lebanon</option>
+                                                <option value="Lesotho">Lesotho</option>
+                                                <option value="Liberia">Liberia</option>
+                                                <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+                                                <option value="Liechtenstein">Liechtenstein</option>
+                                                <option value="Lithuania">Lithuania</option>
+                                                <option value="Luxembourg">Luxembourg</option>
+                                                <option value="Macau">Macau</option>
+                                                <option value="Macedonia">Macedonia, The Former Yugoslav Republic of</option>
+                                                <option value="Madagascar">Madagascar</option>
+                                                <option value="Malawi">Malawi</option>
+                                                <option value="Malaysia">Malaysia</option>
+                                                <option value="Maldives">Maldives</option>
+                                                <option value="Mali">Mali</option>
+                                                <option value="Malta">Malta</option>
+                                                <option value="Marshall Islands">Marshall Islands</option>
+                                                <option value="Martinique">Martinique</option>
+                                                <option value="Mauritania">Mauritania</option>
+                                                <option value="Mauritius">Mauritius</option>
+                                                <option value="Mayotte">Mayotte</option>
+                                                <option value="Mexico">Mexico</option>
+                                                <option value="Micronesia">Micronesia, Federated States of</option>
+                                                <option value="Moldova">Moldova, Republic of</option>
+                                                <option value="Monaco">Monaco</option>
+                                                <option value="Mongolia">Mongolia</option>
+                                                <option value="Montserrat">Montserrat</option>
+                                                <option value="Morocco">Morocco</option>
+                                                <option value="Mozambique">Mozambique</option>
+                                                <option value="Myanmar">Myanmar</option>
+                                                <option value="Namibia">Namibia</option>
+                                                <option value="Nauru">Nauru</option>
+                                                <option value="Nepal">Nepal</option>
+                                                <option value="Netherlands">Netherlands</option>
+                                                <option value="Netherlands Antilles">Netherlands Antilles</option>
+                                                <option value="New Caledonia">New Caledonia</option>
+                                                <option value="New Zealand">New Zealand</option>
+                                                <option value="Nicaragua">Nicaragua</option>
+                                                <option value="Niger">Niger</option>
+                                                <option value="Nigeria">Nigeria</option>
+                                                <option value="Niue">Niue</option>
+                                                <option value="Norfolk Island">Norfolk Island</option>
+                                                <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                                                <option value="Norway">Norway</option>
+                                                <option value="Oman">Oman</option>
+                                                <option value="Pakistan">Pakistan</option>
+                                                <option value="Palau">Palau</option>
+                                                <option value="Panama">Panama</option>
+                                                <option value="Papua New Guinea">Papua New Guinea</option>
+                                                <option value="Paraguay">Paraguay</option>
+                                                <option value="Peru">Peru</option>
+                                                <option value="Philippines">Philippines</option>
+                                                <option value="Pitcairn">Pitcairn</option>
+                                                <option value="Poland">Poland</option>
+                                                <option value="Portugal">Portugal</option>
+                                                <option value="Puerto Rico">Puerto Rico</option>
+                                                <option value="Qatar">Qatar</option>
+                                                <option value="Reunion">Reunion</option>
+                                                <option value="Romania">Romania</option>
+                                                <option value="Russia">Russian Federation</option>
+                                                <option value="Rwanda">Rwanda</option>
+                                                <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                                                <option value="Saint LUCIA">Saint LUCIA</option>
+                                                <option value="Saint Vincent">Saint Vincent and the Grenadines</option>
+                                                <option value="Samoa">Samoa</option>
+                                                <option value="San Marino">San Marino</option>
+                                                <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                                                <option value="Saudi Arabia">Saudi Arabia</option>
+                                                <option value="Senegal">Senegal</option>
+                                                <option value="Seychelles">Seychelles</option>
+                                                <option value="Sierra">Sierra Leone</option>
+                                                <option value="Singapore">Singapore</option>
+                                                <option value="Slovakia">Slovakia (Slovak Republic)</option>
+                                                <option value="Slovenia">Slovenia</option>
+                                                <option value="Solomon Islands">Solomon Islands</option>
+                                                <option value="Somalia">Somalia</option>
+                                                <option value="South Africa">South Africa</option>
+                                                <option value="South Georgia">South Georgia and the South Sandwich Islands</option>
+                                                <option value="Span">Spain</option>
+                                                <option value="SriLanka">Sri Lanka</option>
+                                                <option value="St. Helena">St. Helena</option>
+                                                <option value="St. Pierre and Miguelon">St. Pierre and Miquelon</option>
+                                                <option value="Sudan">Sudan</option>
+                                                <option value="Suriname">Suriname</option>
+                                                <option value="Svalbard">Svalbard and Jan Mayen Islands</option>
+                                                <option value="Swaziland">Swaziland</option>
+                                                <option value="Sweden">Sweden</option>
+                                                <option value="Switzerland">Switzerland</option>
+                                                <option value="Syria">Syrian Arab Republic</option>
+                                                <option value="Taiwan">Taiwan, Province of China</option>
+                                                <option value="Tajikistan">Tajikistan</option>
+                                                <option value="Tanzania">Tanzania, United Republic of</option>
+                                                <option value="Thailand">Thailand</option>
+                                                <option value="Togo">Togo</option>
+                                                <option value="Tokelau">Tokelau</option>
+                                                <option value="Tonga">Tonga</option>
+                                                <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                                                <option value="Tunisia">Tunisia</option>
+                                                <option value="Turkey">Turkey</option>
+                                                <option value="Turkmenistan">Turkmenistan</option>
+                                                <option value="Turks and Caicos">Turks and Caicos Islands</option>
+                                                <option value="Tuvalu">Tuvalu</option>
+                                                <option value="Uganda">Uganda</option>
+                                                <option value="Ukraine">Ukraine</option>
+                                                <option value="United Arab Emirates">United Arab Emirates</option>
+                                                <option value="United Kingdom">United Kingdom</option>
+                                                <option value="United States">United States</option>
+                                                <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+                                                <option value="Uruguay">Uruguay</option>
+                                                <option value="Uzbekistan">Uzbekistan</option>
+                                                <option value="Vanuatu">Vanuatu</option>
+                                                <option value="Venezuela">Venezuela</option>
+                                                <option value="Vietnam">Viet Nam</option>
+                                                <option value="Virgin Islands (British)">Virgin Islands (British)</option>
+                                                <option value="Virgin Islands (U.S)">Virgin Islands (U.S.)</option>
+                                                <option value="Wallis and Futana Islands">Wallis and Futuna Islands</option>
+                                                <option value="Western Sahara">Western Sahara</option>
+                                                <option value="Yemen">Yemen</option>
+                                                <option value="Yugoslavia">Yugoslavia</option>
+                                                <option value="Zambia">Zambia</option>
+                                                <option value="Zimbabwe">Zimbabwe</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="box1drive">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="">
+                                            <label>Account Name:</label>
+                                            <input id="AccountName" name="AccountName" formControlName="AccountName" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label>Sort code:</label>
+                                            <input id="SortCode" name="SortCode" formControlName="SortCode" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <div class="">
+                                            <label>Account number:</label>
+                                            <input id="AccountNo" name="AccountNo" formControlName="AccountNo" type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                            <button class="btn btn-success" type="submit">Submit</button>
+
+                        </div>
+
+                    </div>
+                </form>
+            </section>
+
+            <section id="content4" class="contab bordersection">
+                <form [formGroup]="DriverExpform"  (ngSubmit)="AddDriverExp()">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="box1drive">
+                                <div class="form-group">
+                                    <label>Experience</label>
+                                    <textarea rows="4" cols="50" class="form-control" formControlName="Experience">Write here</textarea>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+                                        <button class="btn btn-success" type="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section id="content5" class="contab bordersection">
+                <form class="detailsfrm" action="">
+                    <div class="row">
+
+                        <div class="col-md-12 col-sm-12">
+                            <div class="box1drive">
+                                <input id="tab12" checked type="radio" name="tabs">
+                                <label for="tab12">Commission</label>
+                                <input id="tab13" type="radio" name="tabs">
+                                <label for="tab13">Hourly Rate</label>
+                                <input id="tab14" type="radio" name="tabs">
+                                <label for="tab14">Point to Point</label>
+                                <input id="tab15" type="radio" name="tabs">
+                                <label for="tab15">Mileage Rate</label>
+                                <input id="tab16" type="radio" name="tabs">
+                                <label for="tab16">Payslip</label>
+
+                                <div id="content12" class="hidediv bordersection">
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <div class="form-group">
+                                                <button class="btn btn-success m-r-10" type="submit"><i class="mdi mdi-plus black" data-name="mdi-flag-variant"></i> Add</button>
+                                                <button class="btn btn-success m-r-10" type="submit"><i class="mdi mdi-delete black" data-name="mdi-flag-variant"></i> Delete</button>
+                                                <button class="btn btn-info m-r-10" type="submit"><i class="fa fa-question-circle black" data-name="mdi-flag-variant"></i> Help</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-5 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="nopint">Default percentage:</label>
+                                                <input id="booking_class" name="default_percentage:" type="text" class="form-control"> %
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3 col-sm-5 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="nopint">Default parking percentage:</label>
+                                                <input id="booking_class" name="default_parking_percentage" type="text" class="form-control"> %
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- row end -->
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="table-responsive">
+                                                <table class="table table-striped custab" border="1">
+                                                    <thead>
+                                                        <tr bgcolor="#000">
+                                                            <th width="50"> </th>
+                                                            <th>Booking Class</th>
+                                                            <th>Payment Type</th>
+                                                            <th>Booking Type</th>
+                                                            <th>Percentage</th>
+                                                            <th>Parking Percentage</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>
+                                                                <label class="newbox">
+                                                                    <input checked="" id="tax_applicable" name="fancy-checkbox-primary" type="checkbox" value="Tax Applicable">
+                                                                    <span class="checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>A Class</td>
+                                                            <td>10%</td>
+                                                            <td>Online</td>
+                                                            <td>Card</td>
+                                                            <td>30%</td>
+                                                            <td><a [routerLink]="['./edit']" class="blackfnt"><i class="fa fa-edit black" style="margin-left:5px;" data-name="mdi-flag-variant"></i></a></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>
+                                                                <label class="newbox">
+                                                                    <input id="tax_applicable" name="fancy-checkbox-primary" type="checkbox" value="Tax Applicable">
+                                                                    <span class="checkmark"></span>
+                                                                </label>
+                                                            </td>
+                                                            <td>A Class</td>
+                                                            <td>10%</td>
+                                                            <td>Online</td>
+                                                            <td>Card</td>
+                                                            <td>30%</td>
+                                                            <td><a [routerLink]="['./edit']" class="blackfnt"><i class="fa fa-edit black" style="margin-left:5px;" data-name="mdi-flag-variant"></i></a></td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- row end -->
+
+                                </div>
+                                <div id="content13" class="hidediv bordersection">
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <div class="form-group">
+                                                <button class="btn btn-success m-r-10" type="submit"><i class="mdi mdi-plus black" data-name="mdi-flag-variant"></i> Add</button>
+                                                <button class="btn btn-success m-r-10" type="submit"><i class="mdi mdi-delete black" data-name="mdi-flag-variant"></i> Delete</button>
+                                                <button class="btn btn-info m-r-10" type="submit"><i class="fa fa-question-circle black" data-name="mdi-flag-variant"></i> Help</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 col-sm-5 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="nopint">Copy from Ddriver:</label>
+                                                <select class="form-control" id="salutation" name="salutation">
+                                                    <option value="Dummy1">Dummy1</option>
+                                                </select>
+                                                <button class="btn btn-success m-r-10" type="submit">Copy</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3 col-sm-5 col-xs-12">
+                                            <div class="form-group">
+                                                <button class="btn btn-success m-r-10" type="submit">Export</button>
+                                                <button class="btn btn-success m-r-10" type="submit">Import</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- row end -->
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table table-striped custab" border="1">
+                                                <thead>
+                                                    <tr bgcolor="#000">
+                                                        <th width="50"> </th>
+                                                        <th>Booking Class</th>
+                                                        <th>Day</th>
+                                                        <th>Time From</th>
+                                                        <th>Time to</th>
+                                                        <th>Hourly Rate</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <label class="newbox">
+                                                                <input checked="" id="tax_applicable" name="fancy-checkbox-primary" type="checkbox" value="Tax Applicable">
+                                                                <span class="checkmark"></span>
+                                                            </label>
+                                                        </td>
+                                                        <td>A Class</td>
+                                                        <td>5 Day</td>
+                                                        <td>10:00 AM</td>
+                                                        <td>08:00 PM</td>
+                                                        <td>$10 P/H</td>
+                                                        <td><a [routerLink]="['./edit']" class="blackfnt"><i class="fa fa-edit black" style="margin-left:5px;" data-name="mdi-flag-variant"></i></a></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                            <label class="newbox">
+                                                                <input id="tax_applicable" name="fancy-checkbox-primary" type="checkbox" value="Tax Applicable">
+                                                                <span class="checkmark"></span>
+                                                            </label>
+                                                        </td>
+                                                        <td>A Class</td>
+                                                        <td>5 Day</td>
+                                                        <td>10:00 AM</td>
+                                                        <td>08:00 PM</td>
+                                                        <td>$10 P/H</td>
+                                                        <td><a [routerLink]="['./edit']" class="blackfnt"><i class="fa fa-edit black" style="margin-left:5px;" data-name="mdi-flag-variant"></i></a></td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                    <!-- row end -->
+
+                                    <!-- end content-13 -->
+                                </div>
+
+                                <div id="content14" class="hidediv bordersection">
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <div class="form-group">
+                                                <button class="btn btn-success m-r-10" type="submit"><i class="mdi mdi-plus black" data-name="mdi-flag-variant"></i> Add</button>
+                                                <button class="btn btn-success m-r-10" type="submit"><i class="mdi mdi-delete black" data-name="mdi-flag-variant"></i> Delete</button>
+                                                <button class="btn btn-info m-r-10" type="submit"><i class="fa fa-question-circle black" data-name="mdi-flag-variant"></i> Help</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 col-sm-5 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="nopint">Copy from Ddriver:</label>
+                                                <select class="form-control" id="salutation" name="salutation">
+                                                    <option value="Dummy1">Dummy1</option>
+                                                </select>
+                                                <button class="btn btn-success m-r-10" type="submit">Copy</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3 col-sm-5 col-xs-12">
+                                            <div class="form-group">
+                                                <button class="btn btn-success m-r-10" type="submit">Export</button>
+                                                <button class="btn btn-success m-r-10" type="submit">Import</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- row end -->
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table table-striped custab" border="1">
+                                                <thead>
+                                                    <tr bgcolor="#000">
+                                                        <th width="50"> </th>
+                                                        <th>Booking Class</th>
+                                                        <th>Day</th>
+                                                        <th>Time From</th>
+                                                        <th>Time to</th>
+                                                        <th>Postcode/Group/Town
+                                                            <br>From</th>
+                                                        <th>Postcode/Group/Town
+                                                            <br>To</th>
+                                                        <th>Fixed Rate</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <label class="newbox">
+                                                                <input checked="" id="tax_applicable" name="fancy-checkbox-primary" type="checkbox" value="Tax Applicable">
+                                                                <span class="checkmark"></span>
+                                                            </label>
+                                                        </td>
+                                                        <td>A Class</td>
+                                                        <td>5 Day</td>
+                                                        <td>10:00 AM</td>
+                                                        <td>08:00 PM</td>
+                                                        <td>001234</td>
+                                                        <td>001225</td>
+                                                        <td>$250</td>
+                                                        <td><a [routerLink]="['./edit']" class="blackfnt"><i class="fa fa-edit black" style="margin-left:5px;" data-name="mdi-flag-variant"></i></a></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                            <label class="newbox">
+                                                                <input id="tax_applicable" name="fancy-checkbox-primary" type="checkbox" value="Tax Applicable">
+                                                                <span class="checkmark"></span>
+                                                            </label>
+                                                        </td>
+                                                        <td>A Class</td>
+                                                        <td>5 Day</td>
+                                                        <td>10:00 AM</td>
+                                                        <td>08:00 PM</td>
+                                                        <td>001234</td>
+                                                        <td>001225</td>
+                                                        <td>$250</td>
+                                                        <td><a [routerLink]="['./edit']" class="blackfnt"><i class="fa fa-edit black" style="margin-left:5px;" data-name="mdi-flag-variant"></i></a></td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                    <!-- row end -->
+
+                                    <!-- end content-14 -->
+
+                                </div>
+
+                                <div id="content15" class="hidediv bordersection">
+                                    <div class="row">
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <div class="form-group">
+                                                <button class="btn btn-success m-r-10" type="submit"><i class="mdi mdi-plus black" data-name="mdi-flag-variant"></i> Add</button>
+                                                <button class="btn btn-success m-r-10" type="submit"><i class="mdi mdi-delete black" data-name="mdi-flag-variant"></i> Delete</button>
+                                                <button class="btn btn-info m-r-10" type="submit"><i class="fa fa-question-circle black" data-name="mdi-flag-variant"></i> Help</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-8 col-sm-8 col-xs-12">
+                                            <div class="form-group">
+                                                <div class="pull-left">
+                                                    <label class="newbox">
+                                                        <label for="mode">Mode:</label>
+                                                        <input type="checkbox" name="fancy-checkbox-primary" value="mode" id="mode" />
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="pull-left">
+                                                    <label class="newbox">
+                                                        <label for="mode1">Total distance:</label>
+                                                        <input type="checkbox" name="fancy-checkbox-primary" value="mode" id="mode1" />
+                                                        <span class="checkmark"></span>
+
+                                                    </label>
+                                                </div>
+
+                                                <div class="pull-left">
+                                                    <label class="nopint">Standing Charge:</label>
+                                                    <input id="booking_class" name="default_percentage:" type="text" class="form-control"> %
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!-- row end -->
+
+                                    <div class="row mt-10">
+                                        <div class="col-md-5 col-sm-5 col-xs-12">
+                                            <div class="form-group">
+                                                <label class="nopint">Copy from Ddriver:</label>
+                                                <select class="form-control" id="salutation" name="salutation">
+                                                    <option value="Dummy1">Dummy1</option>
+                                                </select>
+                                                <button class="btn btn-success m-r-10" type="submit">Copy</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3 col-sm-5 col-xs-12">
+                                            <div class="form-group">
+                                                <button class="btn btn-success m-r-10" type="submit">Export</button>
+                                                <button class="btn btn-success m-r-10" type="submit">Import</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table class="table table-striped custab" border="1">
+                                                <thead>
+                                                    <tr bgcolor="#000">
+                                                        <th width="50"> </th>
+                                                        <th>Booking Class</th>
+                                                        <th>Day</th>
+                                                        <th>Time From</th>
+                                                        <th>Time to</th>
+                                                        <th>Mileage From</th>
+                                                        <th>Mileage To</th>
+                                                        <th>Standing Charge</th>
+                                                        <th>Mileage Rate</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <label class="newbox">
+                                                                <input checked="" id="tax_applicable" name="fancy-checkbox-primary" type="checkbox" value="Tax Applicable">
+                                                                <span class="checkmark"></span>
+                                                            </label>
+                                                        </td>
+                                                        <td>A Class</td>
+                                                        <td>5 Day</td>
+                                                        <td>10:00 AM</td>
+                                                        <td>08:00 PM</td>
+                                                        <td>20Km</td>
+                                                        <td>100Km</td>
+                                                        <td>$250</td>
+                                                        <td>$250</td>
+                                                        <td><a [routerLink]="['./edit']" class="blackfnt"><i class="fa fa-edit black" style="margin-left:5px;" data-name="mdi-flag-variant"></i></a></td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <td>
+                                                            <label class="newbox">
+                                                                <input id="tax_applicable" name="fancy-checkbox-primary" type="checkbox" value="Tax Applicable">
+                                                                <span class="checkmark"></span>
+                                                            </label>
+                                                        </td>
+                                                        <td>A Class</td>
+                                                        <td>5 Day</td>
+                                                        <td>10:00 AM</td>
+                                                        <td>08:00 PM</td>
+                                                        <td>20Km</td>
+                                                        <td>100Km</td>
+                                                        <td>$250</td>
+                                                        <td>$250</td>
+                                                        <td><a [routerLink]="['./edit']" class="blackfnt"><i class="fa fa-edit black" style="margin-left:5px;" data-name="mdi-flag-variant"></i></a></td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+                                    </div>
+                                    <!-- row end -->
+
+                                    <!-- end content-15 -->
+
+                                </div>
+
+                                <div id="content16" class="hidediv bordersection">
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <label>Payslip format</label>
+                                                <select class="form-control" id="salutation" name="salutation">
+                                                    <option value="Dummy1">Payslip</option>
+                                                    <option value="Dummy1">Self-Billing Invoice</option>
+                                                </select>
+                                                <button class="btn btn-success m-r-10" type="submit">Sumit</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- end content 16 -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section id="content6" class="contab bordersection">
+                <form class="detailsfrm" action="">
+                    <div class="row">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12 ">
+                            <div class="box1drive">
+                                <div class="col-md-6 col-sm-6 col-xs-12 ">
+                                    <div class="form-group">
+                                        <label class="newbox">
+                                            <input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Pending" />
+                                            <span class="checkmark"></span>
+                                            <label for="Pending"> Register</label>
+
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <button class="btn btn-success m-r-10" type="submit">Register</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section id="content7" class="contab bordersection">
+                <form class="detailsfrm" action="">
+                    <div class="row">
+
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="box1drive">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-6 col-xs-12 ">
+                                        <div class="form-group">
+                                            <label>Username</label>
+                                            <input id="booking_class" name="booking_class" type="text" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-6 col-xs-12 ">
+                                        <div class="form-group">
+                                            <label>Password</label>
+                                            <input id="booking_class" name="booking_class" type="text" class="form-control">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12 mt-10 text-left">
+                                        <button class="btn btn-success" type="submit">Submit</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section id="content8">
+                <form class="detailsfrm" action="">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="box1drive">
+                                <h5>Off-Shift Every</h5>
+                                <div class="fullrow">
+                                    <div class="form-group">
+                                        <label class="newbox">
+                                            <input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Pendingn1" />
+                                            <span class="checkmark"></span>
+                                            <label for="Pendingn1">Monday</label>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="fullrow">
+                                    <div class="form-group">
+                                        <label class="newbox">
+                                            <input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Pendingn2" />
+                                            <span class="checkmark"></span>
+                                            <label for="Pendingn2">Tuesday</label>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="fullrow">
+                                    <div class="form-group">
+                                        <label class="newbox">
+                                            <input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Pendingn3" />
+                                            <span class="checkmark"></span>
+                                            <label for="Pendingn3">Wednesday</label>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="fullrow">
+                                    <div class="form-group">
+                                        <label class="newbox">
+                                            <input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Pendingn4" />
+                                            <span class="checkmark"></span>
+                                            <label for="Pendingn4">Thursday</label>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="fullrow">
+                                    <div class="form-group">
+                                        <label class="newbox">
+                                            <input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Pendingn5" />
+                                            <span class="checkmark"></span>
+                                            <label for="Pendingn5">Friday</label>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="fullrow">
+                                    <div class="form-group">
+                                        <label class="newbox">
+                                            <input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Pendingn6" />
+                                            <span class="checkmark"></span>
+                                            <label for="Pendingn6">Saturday</label>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="fullrow">
+                                    <div class="form-group">
+                                        <label class="newbox">
+                                            <input type="checkbox" name="fancy-checkbox-primary" value="Pending" id="Pendingn7" />
+                                            <span class="checkmark"></span>
+                                            <label for="Pendingn7">Sunday</label>
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                            <div class="box1drive">
+                                <input id="tab18" checked type="radio" name="tabs">
+                                <label for="tab18">Off-Shift/Unavailable</label>
+                                <input id="tab19" type="radio" name="tabs">
+                                <label for="tab19">Holiday</label>
+
+                                <div id="content18" class="hidediv bordersection">
+
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <button class="btn btn-success m-r-10" type="submit"><i class="mdi mdi-plus black" data-name="mdi-flag-variant"></i> Add</button>
+                                                <button class="btn btn-success m-r-10" type="submit"><i class="mdi mdi-delete black" data-name="mdi-flag-variant"></i> Delete</button>
+                                                <button class="btn btn-info m-r-10" type="submit"><i class="fa fa-question-circle black" data-name="mdi-flag-variant"></i> Help</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-12 fulltab">
+
+                                            <table class="table table-striped custab" border="1">
+                                                <thead>
+                                                    <tr bgcolor="#000">
+                                                        <th width="50"> </th>
+                                                        <th>From Date</th>
+                                                        <th>Time</th>
+                                                        <th>To Date</th>
+                                                        <th>Time</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <label class="newbox">
+                                                                <input checked="" id="tax_applicable" name="fancy-checkbox-primary" type="checkbox" value="Tax Applicable">
+                                                                <span class="checkmark"></span>
+                                                            </label>
+                                                        </td>
+                                                        <td>20-July-2018</td>
+                                                        <td>11:45 AM</td>
+                                                        <td>21-July-2018</td>
+                                                        <td>11:45 AM</td>
+                                                        <td><a [routerLink]="['./edit']" class="blackfnt"><i class="fa fa-edit black" style="margin-left:5px;" data-name="mdi-flag-variant"></i></a></td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div id="content19" class="hidediv bordersection">
+
+                                    <div class="row">
+                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                            <div class="form-group">
+                                                <button class="btn btn-success m-r-10" type="submit"><i class="mdi mdi-plus black" data-name="mdi-flag-variant"></i> Add</button>
+                                                <button class="btn btn-success m-r-10" type="submit"><i class="mdi mdi-delete black" data-name="mdi-flag-variant"></i> Delete</button>
+                                                <button class="btn btn-info m-r-10" type="submit"><i class="fa fa-question-circle black" data-name="mdi-flag-variant"></i> Help</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-12 fulltab">
+
+                                            <table class="table table-striped custab" border="1">
+                                                <thead>
+                                                    <tr bgcolor="#000">
+                                                        <th width="50"> </th>
+                                                        <th>From Date</th>
+                                                        <th>Time</th>
+                                                        <th>To Date</th>
+                                                        <th>Time</th>
+                                                        <td><a [routerLink]="['./edit']" class="blackfnt"><i class="fa fa-edit black" style="margin-left:5px;" data-name="mdi-flag-variant"></i></a></td>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <label class="newbox">
+                                                                <input checked="" id="tax_applicable" name="fancy-checkbox-primary" type="checkbox" value="Tax Applicable">
+                                                                <span class="checkmark"></span>
+                                                            </label>
+                                                        </td>
+                                                        <td>21-July-2018</td>
+                                                        <td>11:45 AM</td>
+                                                        <td>22-July-2018</td>
+                                                        <td>11:45 AM</td>
+                                                        <td><a [routerLink]="['./edit']" class="blackfnt"><i class="fa fa-edit black" style="margin-left:5px;" data-name="mdi-flag-variant"></i></a></td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </section>
+
+            <section id="content9" class="contab bordersection">
+                <form class="detailsfrm" action="">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="box1drive">
+                                <div class="form-group">
+                                    <label>Notes</label>
+                                    <textarea rows="4" cols="50" class="form-control">Write here</textarea>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12 text-right">
+                                        <button class="btn btn-success" type="submit">Submit</button>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section id="content10" class="contab bordersection">
+                <form class="detailsfrm" action="">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <div class="box1drive">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <button class="btn btn-success m-r-10" type="submit"><i class="mdi mdi-plus black" data-name="mdi-flag-variant"></i> Add</button>
+                                            <button class="btn btn-success m-r-10" type="submit"><i class="mdi mdi-delete black" data-name="mdi-flag-variant"></i> Delete</button>
+                                            <button class="btn btn-info m-r-10" type="submit"><i class="fa fa-question-circle black" data-name="mdi-flag-variant"></i> Help</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-sm-12 fulltab">
+
+                                        <table class="table table-striped custab" border="1">
+                                            <thead>
+                                                <tr bgcolor="#000">
+                                                    <th width="50"> </th>
+                                                    <th>Customer</th>
+                                                    <th>Client</th>
+                                                    <th>Reason</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <label class="newbox">
+                                                            <input checked="" id="tax_applicable" name="fancy-checkbox-primary" type="checkbox" value="Tax Applicable">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <img src="../../../assets/images/pie-chart.png"></td>
+                                                    <td>Marwin Simms</td>
+                                                    <td> 001</td>
+                                                    <td><a [routerLink]="['./edit']" class="blackfnt"><i class="fa fa-edit black" style="margin-left:5px;" data-name="mdi-flag-variant"></i></a></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        <label class="newbox">
+                                                            <input id="tax_applicable" name="fancy-checkbox-primary" type="checkbox" value="Tax Applicable">
+                                                            <span class="checkmark"></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <img src="../../../assets/images/pie-chart.png"></td>
+                                                    <td>Marwin Simms</td>
+                                                    <td> 001</td>
+                                                    <td><a [routerLink]="['./edit']" class="blackfnt"><i class="fa fa-edit black" style="margin-left:5px;" data-name="mdi-flag-variant"></i></a></td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <section id="content11" class="contab bordersection">
+                <form class="detailsfrm" action="">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <div class="box1drive">
+                                <div class="row">
+
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <button class="btn btn-success m-r-10" type="submit"><i class="mdi mdi-plus black" data-name="mdi-flag-variant"></i> Add</button>
+                                            <button class="btn btn-success m-r-10" type="submit"><i class="mdi mdi-delete black" data-name="mdi-flag-variant"></i> Delete</button>
+                                            <button class="btn btn-success m-r-10" type="submit"><i class="fa fa-edit black" data-name="mdi-flag-variant"></i> Edit</button>
+                                            <button class="btn btn-info m-r-10" type="submit"><i class="fa fa-question-circle black" data-name="mdi-flag-variant"></i> Help</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 col-sm-12 fulltab">
+                                        <div class="text-center headcov">Regions Covered</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <section id="content12" class="contab bordersection">
+                <form class="detailsfrm" action="">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group linkbtn">
+                                <div class="pull-left">
+                                    <label>Photograph: </label>
+                                </div>
+                                <a href="javascript:void(0);" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">Add</a> |
+                                <a href="javascript:void(0);">Remove</a>
+                                <div class="tabrow mt-10">
+                                    <blockquote id="collapseExample" [ngbCollapse]="isCollapsed">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <input type="file"id="file"
+                                                (change)="fileChange($event)" accept=".pdf,.doc,.docx,.jpg">
+                                                <!-- <input type="button" class="btn btn-info" value="submit" /> -->
+                                            </div>
+                                        </div>
+                                    </blockquote>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <img src="./assets/images/profile-sq.jpg" width="100%" alt="" />
+                        </div>
+
+                    </div>
+                </form>
+            </section>
+        </main>
+
+    </div>
+</div>

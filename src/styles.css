@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+
+.ps .ps__scrollbar-y-rail {
+    left: 3px;
+    right: auto;
+}
+@media screen and (max-width: 1000px) {
+table.table.table-striped.custab,.toptab table {width: 1000px;}
+.toptab {width: 90%; margin: 0 5%; padding: 0;}
+}

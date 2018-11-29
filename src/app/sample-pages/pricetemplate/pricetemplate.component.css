@@ -1,0 +1,444 @@
+.points_table thead {
+	width: 100%; border:1px solid #ccc;
+}
+
+.points_table tbody {
+	height:auto;
+	overflow-y: auto;
+	width: 100%;border:1px solid #ccc;
+}
+
+.points_table thead tr{
+	border:0px solid #ccc;
+}
+
+ .points_table tr{	border:1px solid #ccc;
+ 	
+ }
+ .points_table tr td, .points_table tr th{width:25%; border:1px solid #ccc;}
+.points_table thead, .points_table tbody, .points_table tr, .points_table td, .points_table th{
+
+}
+
+.points_table thead{
+	background: #1976d2;
+	color: #fff;
+}
+
+.points_table tbody td, .points_table thead > tr> th{
+	float: left;
+	border-bottom-width: 0;
+}
+
+.points_table>tbody>tr>td, .points_table>tbody>tr>th, .points_table>tfoot>tr>td, .points_table>tfoot>tr>th, .points_table>thead>tr>td, .points_table>thead>tr>th{
+	padding: 8px;
+	height: 50px;
+	text-align: center;
+	line-height: 32px;
+}
+
+.odd {
+	background: #ffffff;
+	color: #000;
+}
+
+.even {
+	background: #efefef;
+	color: #000;
+}
+
+.points_table_scrollbar{
+	height: 612px;
+	overflow-y: scroll;
+}
+
+.points_table_scrollbar::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+	border-radius: 10px;
+	background-color: #444444;
+}
+
+.points_table_scrollbar::-webkit-scrollbar{
+	width: 1%;
+	min-width: 5px;
+	background-color: #F5F5F5;
+}
+
+.points_table_scrollbar::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	background-color: #1976d2;
+	background-image: -webkit-linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.4) 50%, transparent, transparent)
+}
+
+.drivcom .form-group{margin-bottom:0;}
+.newtab th{    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    background: #1976d2;
+    color: #fff; padding: 10px 0;}
+	
+	.newtab td{    font-size: 12px;  text-align: center;}
+	
+main{
+    min-width: 320px;
+    max-width: 100%;
+    padding: 50px 10px 10px;
+    margin: 0 auto 30px;
+    background: #fff;
+}
+
+	.mt-18 {
+    margin-top: 18px;
+}
+
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #1eafa9;
+}
+
+/* On mouse-over, add a grey background color */
+.newbox:hover input ~ .checkmark {
+    background-color: #1eafa9;
+}
+
+/* When the checkbox is checked, add a blue background */
+.newbox input:checked ~ .checkmark {
+    background-color: #000;
+}
+.newbox label {
+    margin-left: 30px!important;
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.newbox input:checked ~ .checkmark:after {
+    display: block;
+}
+/* Style the checkmark/indicator */
+.newbox .checkmark:after {
+    left: 8px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/* End check box css	 */
+	
+	
+.labdelete span.checkmark{float:none; display:inline-block; margin-right:0;}
+.labdelete label.newbox{margin-bottom:0;}
+
+	
+	
+
+/* 18 july CSS	 */
+	
+.form-control{min-height: 25px; padding-top: 0; padding-bottom: 0; font-size: 12px;}
+select#inlineFormCustomSelect {height: 25px; padding-top: 0; font-size: 12px; padding-bottom: 0;}
+.input-group-text{padding-top: 0; padding-bottom: 0;}
+.btn{padding: 0px 10px; cursor: pointer;}
+
+
+@media screen and (min-width: 1200px){
+.card label{font-size: 12px; margin-bottom: 2px;}
+}
+
+
+
+
+
+
+
+
+/* css for setup page */
+
+.box1drive{padding: 10px; background: #f5f5f5;box-shadow: 4px 4px 4px rgba(0,0,0,0.2);margin-bottom: 30px;}
+.setupcon fieldset {min-width: 0;padding: 15px;margin: 0;border: 1px solid;}
+.setupcon fieldset legend{font-size:1rem; width:auto; display:inline-block; padding:0 5px;}
+.setupcon fieldset ul {list-style: none;margin: 0; height:150px; overflow-y:scroll; padding: 0;}	
+.col-md-6.setupcon {margin-top: 20px;}
+select.custom-select.sep3,input.sep3{display: inline-block; width: 100%; height: 25px; font-size: 12px; line-height: 10px; padding:0 5px;    background-color: #fff;}
+.set-right label{float:left; margin-top:10px;}
+.set-right label.newbox {margin-top: 0; font-size: 12px;}
+.full.set-right.row {font-size: 12px;}
+.font-12{font-size:12px;}
+.setupcon fieldset ul li {padding: 3px 0;}
+
+
+
+
+
+/* Parameters page css */
+
+section,.hidediv {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+}
+#content5 input[type="radio"]{display:none;}
+
+.home-tab.para input {
+  display: none;
+}
+.contab input,.contab  select{display:block;    min-height: 25px; padding:0 5px;    height: auto;    font-size: 12px;}
+
+.home-tab.para label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 15px;
+  font-weight: 400;
+  text-align: center;
+  color: #bbb; font-size:12px;
+  border: 1px solid transparent;
+}
+.btn{padding: 0px 10px;}
+.contab label{padding:0;    font-weight: normal; font-size: 14px;    color: #000;}
+.addressrw input{margin-bottom:10px;}
+.box1drive {padding: 10px;background: #f5f5f5; box-shadow: 4px 4px 4px rgba(0,0,0,0.2); margin-bottom:30px;}
+.bordersection{border: 1px solid #ddd!important; padding: 15px!important;}
+.home-tab.para label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+
+
+
+
+
+.newbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* Hide the browser's default checkbox */
+.newbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+
+.newbox label {
+    margin-left: 30px!important;
+}
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.newbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+
+
+#content10 .table thead th,#content10  .table th {
+   border:1px solid #fff; color:#fff;
+      padding: 5px 0.75rem;
+    font-size: 12px;
+}
+
+#content10 .table thead td,#content10  .table td {
+   border:1px solid #000; padding: 5px 0.75rem;
+    font-size: 12px;
+}
+
+
+#content10  .table-striped tbody tr:nth-of-type(odd){color:#000;}
+
+#content8 .table thead th,#content8  .table th,
+#content12 .table thead th,#content12  .table th,
+#content13 .table thead th,#content13  .table th,
+#content14 .table thead th,#content14  .table th,
+#content15 .table thead th,#content15  .table th {
+   border:1px solid #fff; color:#fff;
+      padding: 5px 0.75rem;
+    font-size: 12px;
+}
+
+#content8 .table thead td,#content8  .table td,
+#content12 .table thead td,#content12  .table td,
+#content13 .table thead td,#content13  .table td,
+#content14 .table thead td,#content14  .table td,
+#content15 .table thead td,#content15  .table td  {
+   border:1px solid #000; padding: 5px 0.75rem;
+    font-size: 12px;
+}
+
+
+#content8  .table-striped tbody tr:nth-of-type(odd),
+#content12  .table-striped tbody tr:nth-of-type,
+#content13  .table-striped tbody tr:nth-of-type(odd),
+#content14  .table-striped tbody tr:nth-of-type(odd),
+#content15  .table-striped tbody tr:nth-of-type(odd){color:#000;}
+
+
+.headcov {
+    background: #333;
+    padding: 5px 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+/* Style the checkmark/indicator */
+.newbox .checkmark:after {
+    left: 8px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.pad-10{padding:5px 10px;}
+
+label.newbox{margin-left:0px!important;margin-right:0px!important;padding-left:0px;}
+
+/* label[for*='1']:before { content: '\f1cb'; } */
+/* label[for*='2']:before { content: '\f17d'; } */
+/* label[for*='3']:before { content: '\f16b'; } */
+/* label[for*='4']:before { content: '\f1a9'; } */
+
+
+.mb-25{margin-bottom:10px;}
+.home-tab label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+.home-tab input:checked + label {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid orange;
+  border-bottom: 1px solid #fff;
+}
+
+.home-tab #content5 input:checked + label,.home-tab #content8 input:checked + label {
+    border-bottom: 1px solid #f5f5f5;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5,
+#tab6:checked ~ #content6,
+#tab7:checked ~ #content7,
+#tab8:checked ~ #content8,
+#tab9:checked ~ #content9,
+#tab10:checked ~ #content10,
+#tab11:checked ~ #content11,
+#tab12:checked ~ #content12,
+#tab13:checked ~ #content13,
+#tab14:checked ~ #content14,
+#tab15:checked ~ #content15,
+#tab16:checked ~ #content16,
+#tab19:checked ~ #content19,
+#tab18:checked ~ #content18{
+  display: block;
+}
+#content1,#content2,#content3,#content4,#content5,#content6,#content7,#content8,#content9,#content10,#content11,,#content12{padding: 0; border-top: 0px solid #ddd;}
+
+.leftrowdriv input,.leftrowdriv select{}
+
+#content5 label {
+    font-size: 14px;
+    padding: 5px;
+}
+.form-group {
+    margin-bottom: 5px;
+}
+
+/* pop up css start here */
+
+
+.fullrow  .newbox label{margin-left:0!important;    padding: 0 0 0 5px;}
+.checkmark{float:left; position:relative; margin-right:10px;}
+.fullrow label{padding:0;}
+.mt-10{margin-top:10px!important;}
+
+
+
+/* css 24july */
+#content12 label,
+#content13 label,
+#content14 label,
+#content15 label,#content16 label{ float: left;width: auto; padding-top:0;padding-bottom:0;}
+
+#content12 input,
+#content15 input[type="text"] {float: left;width: 100px;    margin-right: 5px;}
+
+#content13 select,
+#content14 select,
+#content15 select,
+#content16 select{float: left;width:200px;    margin-right: 5px;}
+#content15 .newbox label {
+    margin-left: 0!important;
+    padding-top: 0!important;
+}
+
+#content5 .custab,#content8 .custab {
+    margin-bottom: 0;
+}
+.table thead th, .table  th{
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 5px 0.75rem;
+    font-size: 12px;
+}
+.table tbody  td{
+	    border: 1px solid #000;
+    padding: 5px 0.75rem;
+    font-size: 12px;
+	
+}
+.inlin-input  label{
+    padding: 0!important;
+    color: #000!important;
+}
+.pd-15{padding-left:15px;padding-right:15px;}
+
+.inputrow input{display:block!important;}
+.inputrow label{padding:0!important; color:#000!important}
+.padLR-15{padding:0 15px;}
+.taxrate{width:100px; float:left; margin-right:10px;}
+#content5 .taxrate{ margin-right:5px;}
+.taxrate1{width:100px; float:right; margin-right:10px;}
+.black{color:#000;}
+label.newbox,.textsetuocon label,.full label{color: #000;}
+.fullselect{height:25px; padding: 0px 5px;}
+select.custom-select.sep2,input.sep2{display: inline-block!important; width: 50px; height: 25px; font-size: 12px; line-height: 10px; padding:0 5px;    background-color: #fff;}
+.inputrow input.sep2{display: inline-block!important; position:relative!important;opacity:1!important;}
+.inlin-input input{display:inline-block!important;}
+.fulllabel label{width:100%;float:left; text-align:left!important; cursor:default!important;}
